@@ -1,11 +1,25 @@
 <html>
 <img id ="blink" src = "https://github.com/AndoryuRenoa/MochiJump/blob/master/background.png?raw=true" ></img>
 <p>
-<button onclick ='x("https://github.com/AndoryuRenoa/MochiJump/blob/master/blink.png?raw=true")'>blink</button>
+<button onclick ='x()'>blink</button>
 </p>
 <script>
-	function x(a){
-		document.getElementById("blink").src =a;
+	let counter = 0;
+	function x(){
+    	var id = setInterval (frame, 1000/5);
+        function frame(){
+        if (counter == 500){
+        clearInterval(id);
+        }
+    	else if (counter%2 == 0){
+        document.getElementById("blink").src ="https://github.com/AndoryuRenoa/MochiJump/blob/master/blink.png?raw=true";
+        counter++;
+        }
+        else{
+        document.getElementById("blink").src ="https://github.com/AndoryuRenoa/MochiJump/blob/master/background.png?raw=true";
+        counter++;
+        }
+}
 }
 </script>
 </html>
