@@ -15,3 +15,7 @@
         }
 }
 }
+	function y(){
+		clearInterval(x.id);
+		// this currently does not stop function x() from continuing.
+}
