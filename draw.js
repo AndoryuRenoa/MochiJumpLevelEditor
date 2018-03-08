@@ -2,6 +2,14 @@
 
 //https://stackoverflow.com/questions/322378/javascript-check-if-mouse-button-down
 
+/**
+*function mouse_position(e)
+*{
+*do stuff
+*}
+*<body onmousemove="mouse_position(event)"></body>
+*//
+
 let divElem = document.getElementById("div1");
 function draw(){
 
