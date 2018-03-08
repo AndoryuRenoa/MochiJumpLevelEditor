@@ -1,3 +1,6 @@
+// I want to figure out how to end a function with another function within JS I think the answer lies here:
+// https://stackoverflow.com/questions/18137656/how-to-stop-a-javascript-function-from-within-another-function
+
 	let counter = 0;
 	let mouseExit = false;
 	function x(){
