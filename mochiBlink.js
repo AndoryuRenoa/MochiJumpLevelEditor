@@ -1,8 +1,7 @@
 // I want to figure out how to end a function with another function within JS I think the answer lies here:
 // https://stackoverflow.com/questions/18137656/how-to-stop-a-javascript-function-from-within-another-function
 
-// okay it seems that function y is called when you exit the container containing the image but it seems to be called repatitively
-// which is bizzare.
+// I see what's happening here the div's width goes way beyond the image of mochi and covers everything to the right...
 
 	let counter = 0;
 	function x(){
