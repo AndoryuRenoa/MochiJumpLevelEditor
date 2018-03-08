@@ -8,7 +8,7 @@
 *do stuff
 *}
 *<body onmousemove="mouse_position(event)"></body>
-*//
+*/
 
 let divElem = document.getElementById("div1");
 function draw(){
