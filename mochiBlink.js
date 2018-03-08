@@ -1,7 +1,4 @@
-// I want to figure out how to end a function with another function within JS I think the answer lies here:
-// https://stackoverflow.com/questions/18137656/how-to-stop-a-javascript-function-from-within-another-function
-
-// I see what's happening here the div's width goes way beyond the image of mochi and covers everything to the right...
+// was having issues with html/css layouts calling functions outside of when expected I think it is corrected now with proper css layout
 
 	let counter = 0;
 	function x(){
