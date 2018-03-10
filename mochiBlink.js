@@ -1,4 +1,6 @@
 // was having issues with html/css layouts calling functions outside of when expected I think it is corrected now with proper css layout
+// the DOM and event handling seems to be very tricky with JS. onmouseleave seems to fire instantly for some reason for example.	
+
 	var counter = 0;
 	var x;
 	var y;
