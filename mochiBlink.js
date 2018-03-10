@@ -1,6 +1,8 @@
 // was having issues with html/css layouts calling functions outside of when expected I think it is corrected now with proper css layout
-
-	let counter = 0;
+	var counter = 0;
+	var x;
+	var y;
+	var drawOutput;
 	function x(){
 		var id = setInterval (frame, 1000);
 		function frame(){
@@ -22,8 +24,21 @@
 	});
 	
 	function cordsFunction(e){
-		var x = e.clientX;
-		var y = e.clientY;
+		x = e.clientX;
+		y = e.clientY;
 		var output = "Coordinates : (" + x + "," + y +")";
 		document.getElementById("demoOutput").innerHTML = output;
+	}
+	
+	document.getElementById("paintBox").addEventListener("onmousedown",function(event){
+		captureStart(event);
+		draw();
+	});
+	function captureStart(e2);{
+		var xStart = e2.clientX;
+		var yStart = e2.clientY;
+	});
+	
+	function draw(){
+		// I think the solution here is to actually use SVG components	
 	}
