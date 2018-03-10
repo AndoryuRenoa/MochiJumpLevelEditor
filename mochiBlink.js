@@ -17,6 +17,13 @@
 			}
 		}
 	}
-	function y(){
-		alert("function y() is being called");
-}
+	document.getElementById("paintBox").addEventListener("mousemove",function(event){
+		cordsFunction(event);
+	});
+	
+	function cordsFunction(e){
+		var x = e.clientX;
+		var y = e.clientY;
+		var output = "Coordinates : (" + x + "," + y +")";
+		document.getElementById("demoOutput").innerHTML = output;
+	}
