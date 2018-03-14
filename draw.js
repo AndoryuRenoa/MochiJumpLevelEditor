@@ -4,8 +4,8 @@
 
 //perhaps the best way to do this is with a keyboard command or with mouse down.
 
-//actually something like the below will work well for now. I just need some boolean triggers to market when it's on or off
-//and maybe some radio buttons for the size selection... I still need to figure out why the svg component is so much smaller
+//actually something like the below will work well for now. I just need some radio buttons for the size selection... 
+//I still need to figure out why the svg component is so much smaller
 //than the actual div container that it's in:
 
 	var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
