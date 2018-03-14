@@ -2,6 +2,8 @@
 // to mouse up. I also need to create an arraylist to house all the data that I'm holding for these rectangles
 // the data inside the arraylist will be what is sent to the database and then ultimately to mochiJump.
 
+//perhaps the best way to do this is with a keyboard command or with mouse down.
+
 
   var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 	var x;
