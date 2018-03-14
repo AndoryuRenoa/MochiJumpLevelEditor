@@ -1,8 +1,15 @@
-// I need to create an arraylist to house all the data that I'm holding for these rectangles
-// the data inside the arraylist will be what is sent to the database and then ultimately to mochiJump.
+/** to Do:
+* add delete last addition button
+* add mochi start point
+* add radio buttons for different rectangle sizes
+* make sure svg components' characteristics can be exported
+*/
+
+/** Notes: code requires arrays to function properly
+*/
 
 
-//actually something like the below will work well for now. I just need some radio buttons for the size selection... 
+
 //for whatever reason svg needs to be told to be 100% of the height and width of the container and syntax is very important
 //when doing this.
 
