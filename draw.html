@@ -1,23 +1,34 @@
 <html>
 <style>
 div.paintbox{
-	margin: 0px;
 	border: 5px solid blue;
-	position: relative;
-	width: 50%;
-	height: 50%;
-	//need to make a decision on how to size the paintbox, and the effect it will have the level editor
+	width: 80%;
+	height: 80%;
+	display: inline-block;
 }
 div.words{
-	position: relative;	
-	left : 50%;
+	float: left;
 }
+div.sizePicker{
+	position: relative	
+	width: 10%;
+	vertical-align: top;
+	display: inline-block;
 </style>
+<div class= "paintBoxContainer">
+	<div class ="paintbox" id="paintBox">
+	</div>
+	<div class ="sizePicker">
+		<p> Choose the platform brush size:</p>
+		// function works but radio buttons don't deselect
+		<input type="radio" onclick ="brushS()"> small<br>
+		<input type="radio" onclick ="brushM()"> medium<br>
+		<input type="radio" onclick ="brushL()"> Large
+	</div>
+</div>
 <div class ="words">
-</div>
-<div class ="paintbox" id="paintBox">
-</div>
 <p id = "demoOutput">Cords go here</p>
+</div>
 </body>
 <script src = "draw.js"></script>
 </html>
