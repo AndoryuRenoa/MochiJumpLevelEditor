@@ -1,15 +1,15 @@
-// okay I can now manipulate the svg component on the webpage to draw what I need. Next step is to finish the function mousedown
-// to mouse up. I also need to create an arraylist to house all the data that I'm holding for these rectangles
+// I need to create an arraylist to house all the data that I'm holding for these rectangles
 // the data inside the arraylist will be what is sent to the database and then ultimately to mochiJump.
 
-//perhaps the best way to do this is with a keyboard command or with mouse down.
 
 //actually something like the below will work well for now. I just need some radio buttons for the size selection... 
-//I still need to figure out why the svg component is so much smaller
-//than the actual div container that it's in:
+//for whatever reason svg needs to be told to be 100% of the height and width of the container and syntax is very important
+//when doing this.
 
 	var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-	var x;
+    svg.setAttribute ("width", "100%");
+    svg.setAttribute ("height", "100%");
+    var x;
 	var y;
     var mouseDown;
     var makeRect;
@@ -49,4 +49,3 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
     function mouseUp(){
     	mouseDown= false;
         }
-
