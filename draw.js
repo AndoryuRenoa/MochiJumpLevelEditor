@@ -12,7 +12,6 @@
 
 //for whatever reason svg needs to be told to be 100% of the height and width of the container and syntax is very important
 //when doing this.
-
 var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
@@ -22,6 +21,8 @@ var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     var makeRect;
     var xmlns = "http://www.w3.org/2000/svg";
 	var brushSize = 5;
+	var pBRects = document.getElementById("paintBox").getBoundingClientRect();
+	document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
 		cordsFunction(event);
 	});
@@ -32,11 +33,11 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
 	});
 	function startDrawBox(downClick){
      if (mouseDown == true){
-		startRectX = downClick.clientX-12;
-		startRectY = downClick.clientY-12;
+		startRectX = downClick.clientX-pBRects.left-5;
+		startRectY = downClick.clientY-pBRects.top-5;
         var newRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        newRect.setAttribute("x", startRectX);
-        newRect.setAttribute("y", startRectY);
+        newRect.setAttribute("x", (startRectX*2-brushSize)/2);
+        newRect.setAttribute("y", (startRectY*2-brushSize)/2);
         newRect.setAttribute ("width", brushSize);
         newRect.setAttribute ("height", brushSize);
         newRect.setAttribute("fill", "#ffcc66");
@@ -45,8 +46,8 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
       }
      }
 	function cordsFunction(e){
-		x = e.clientX;
-		y = e.clientY;
+		x = e.clientX -pBRects.left-5;
+		y = e.clientY-pBRects.top-5;
 		var output = "Coordinates : (" + x + "," + y +")";
 		document.getElementById("demoOutput").innerHTML = output;
 	}
@@ -63,5 +64,9 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
 		brushSize = 50;
 	}
 	function brushL(){
-		brushSize = 500;
+		brushSize = 150;
 	}
+	function clearAll(){
+		location.reload();
+	}
+
