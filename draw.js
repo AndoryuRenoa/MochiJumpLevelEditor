@@ -1,22 +1,16 @@
 /** to Do:
 * add delete last addition button
 * add mochi start point
-* add radio buttons for different rectangle sizes
 * make sure svg components' characteristics can be exported
 */
 
-/** Notes: code requires arrays to function properly
-*/
+/** Notes: last big step is to figure out how to access these svg rectangles after they are added */
 
-
-
-//for whatever reason svg needs to be told to be 100% of the height and width of the container and syntax is very important
-//when doing this.
-var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
     var x;
-	var y;
+    var y;
     var mouseDown;
     var makeRect;
     var xmlns = "http://www.w3.org/2000/svg";
