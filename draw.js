@@ -1,5 +1,5 @@
 /** Optional additional to Do:
-* add delete last addition button
+* add delete last addition button (can be done by adding click counter and adding to tags to created objects baised off that click count)
 * add mochi start point
 * customer platform brush size option
 */
