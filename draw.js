@@ -4,16 +4,15 @@
 * make sure svg components' characteristics can be exported
 */
 
-/** Notes: last big step is to figure out how to access these svg rectangles after they are added 
-* I think the answer may lay here: 
-* https://stackoverflow.com/questions/12187406/finding-svg-elements-with-particular-attributes-using-javascript
+/** Notes: Currently working on a way to output all of the coordinates, heights, and widths for the rects
+*getting close to having to learn how to export and work with a database!
 */
 
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
     var x;
-    var y;
+	var y;
     var mouseDown;
     var makeRect;
     var xmlns = "http://www.w3.org/2000/svg";
@@ -66,4 +65,8 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
 	function clearAll(){
 		location.reload();
 	}
-
+	function getCoords(){
+			var allRects = svg.getElementsByTagName("*");
+			var testOutput = allRects[0].getBoundingClientRect();
+			alert(testOutput.top);
+	}	
