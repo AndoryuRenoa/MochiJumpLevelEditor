@@ -35,7 +35,8 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
         newRect.setAttribute("y", (startRectY*2-brushSize)/2);
         newRect.setAttribute ("width", brushSize);
         newRect.setAttribute ("height", brushSize);
-        newRect.setAttribute("fill", "#ffcc66");
+        newRect.setAttribute("fill", "#82571b");
+		//^^ same color as in mochiJump currently
         svg.appendChild(newRect);
         document.getElementById("paintBox").appendChild(svg);
       }
