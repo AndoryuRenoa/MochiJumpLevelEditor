@@ -4,11 +4,10 @@
 * make sure svg components' characteristics can be exported
 */
 
-/** Notes: Currently working on a way to output all of the coordinates, heights, and widths for the rects
-*getting close to having to learn how to export and work with a database!
+/** okay, i think a for(i=0; i<.length;i++) will work if I had the code to output to a database! time to learn how to do that!!!
 */
 
-var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+	var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
     var x;
@@ -68,5 +67,6 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
 	function getCoords(){
 			var allRects = svg.getElementsByTagName("*");
 			var testOutput = allRects[0].getBoundingClientRect();
-			alert(testOutput.top);
-	}	
+			alert("total number of objects is: "+allRects.length+" bounds for first painted rect is: x="+testOutput.left+", y="+ testOutput.top+",width="+testOutput.width+",height="+testOutput.height);
+			//^^ I'm so close to being able to export this data to a database!!!
+	}
