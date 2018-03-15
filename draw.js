@@ -7,25 +7,24 @@
 /** okay, i think a for(i=0; i<.length;i++) will work if I had the code to output to a database! time to learn how to do that!!!
 */
 
-	var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
     var x;
-	var y;
+    var y;
     var mouseDown;
     var makeRect;
     var xmlns = "http://www.w3.org/2000/svg";
-	var brushSize = 5;
-	var pBRects = document.getElementById("paintBox").getBoundingClientRect();
-	document.getElementById("paintBox").style.cursor = "crosshair";
+    var brushSize = 5;
+    var pBRects = document.getElementById("paintBox").getBoundingClientRect();
+document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
 		cordsFunction(event);
 	});
+document.getElementById("paintBox").addEventListener("mouseleave", mouseReset);
 document.getElementById("paintBox").addEventListener("mousedown", mouseDn);
 document.getElementById("paintBox").addEventListener("mouseup", mouseUp);
-document.getElementById("paintBox").addEventListener("mousemove", function(event){
-		mouseMoveDrawBox();
-	});
+document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawBox);
 	function mouseMoveDrawBox(){
      if (mouseDown == true){
 		makeNewBox();
@@ -55,6 +54,9 @@ document.getElementById("paintBox").addEventListener("mousemove", function(event
     	mouseDown= false;
 		makeNewBox();
         }
+	function mouseReset(){
+		mouseDown= false;
+	}
 	function brushS(){
 		brushSize = 5;
 	}
