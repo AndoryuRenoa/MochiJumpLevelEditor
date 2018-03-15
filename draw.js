@@ -1,6 +1,7 @@
 /** Optional additional to Do:
 * add delete last addition button
 * add mochi start point
+* customer platform brush size option
 */
 
 /** okay, i think a for(i=0; i<.length;i++) will work if I had the code to output to a database! time to learn how to do that!!!
