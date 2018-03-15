@@ -20,14 +20,15 @@ div.sizePicker{
 	</div>
 	<div class ="sizePicker">
 		<p> Choose the platform brush size:</p>
-		<input type="radio" onclick ="brushS()"> small<br>
-		<input type="radio" onclick ="brushM()"> medium<br>
-		<input type="radio" onclick ="brushL()"> Large
+		<input type="radio" onclick ="brushS()" name="radioButton" checked> small<br>
+		<input type="radio" onclick ="brushM()"name="radioButton"> medium<br>
+		<input type="radio" onclick ="brushL()"name="radioButton"> Large
 	</div>
 </div>
 <div class ="words">
 <p id = "demoOutput">Cords go here</p><br>
 <button onclick="clearAll()">Clear All</button>
+<button onclick="getCoords()">Get Attributes</button>
 </div>
 </body>
 <script src = "draw.js"></script>
