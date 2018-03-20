@@ -2,6 +2,8 @@
 * add delete last addition button (can be done by adding click counter and adding to tags to created objects baised off that click count)
 * add mochi start point
 * custom platform brush size option
+* Current reading: https://www.w3schools.com/js/js_json_intro.asp
+* continued: https://blog.garstasio.com/you-dont-need-jquery/ajax/
 */
 
 /** okay, i think a for(i=0; i<.length;i++) will work if I had the code to output to a database! time to learn how to do that!!!
