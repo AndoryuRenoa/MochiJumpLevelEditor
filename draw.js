@@ -79,6 +79,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			alert(allRects.length+" objects have been created. Attributes for the first painted object is: x="+testOutput.left+", y="+ testOutput.top+",width="+testOutput.width+",height="+testOutput.height);
 			//^^ I'm so close to being able to export this data to a database!!!
 	}
+// have not tested the below code yet!
 	function delLastAdded(){
 		allRects = svg.getElementsByTagName("*");
 		var lastAdded = allRects.lenght;
