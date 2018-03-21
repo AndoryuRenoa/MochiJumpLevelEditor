@@ -4,6 +4,7 @@
 * custom platform brush size option
 * Current reading: https://www.w3schools.com/js/js_json_intro.asp
 * continued: https://blog.garstasio.com/you-dont-need-jquery/ajax/
+* continued: https://www.kirupa.com/html5/making_http_requests_js.htm
 */
 
 /** okay, i think a for(i=0; i<.length;i++) will work if I had the code to output to a database! time to learn how to do that!!!
