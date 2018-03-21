@@ -1,3 +1,5 @@
+// this will house the working code for using PHP to add to the mySQL database. Once complete it can be moved/renamed elsewhere
+
 /** the time has come to try to move data from the mJLE page to else where. In order to do this I will need a PHP script
 * as I am completely unfamiliar with PHP this test.php will serve as my starting point for this.
 * 
