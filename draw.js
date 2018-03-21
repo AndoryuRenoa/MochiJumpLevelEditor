@@ -1,5 +1,5 @@
 /** Optional additional to Do:
-* add delete last addition button (can be done by adding click counter and adding to tags to created objects baised off that click count)
+* add delete last addition button (use lastAdded = allRect.lenght ; allRect.splice(lastAdded,lastAdded);)
 * add mochi start point
 * custom platform brush size option
 * Current reading: https://www.w3schools.com/js/js_json_intro.asp
