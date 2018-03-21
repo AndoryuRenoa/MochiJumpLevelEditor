@@ -19,6 +19,7 @@
     var makeRect;
     var xmlns = "http://www.w3.org/2000/svg";
     var brushSize = 5;
+    var allRects;
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
 document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
@@ -73,8 +74,13 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		location.reload();
 	}
 	function getCoords(){
-			var allRects = svg.getElementsByTagName("*");
+			allRects = svg.getElementsByTagName("*");
 			var testOutput = allRects[0].getBoundingClientRect();
 			alert(allRects.length+" objects have been created. Attributes for the first painted object is: x="+testOutput.left+", y="+ testOutput.top+",width="+testOutput.width+",height="+testOutput.height);
 			//^^ I'm so close to being able to export this data to a database!!!
+	}
+	function delLastAdded(){
+		allRects = svg.getElementsByTagName("*");
+		var lastAdded = allRects.lenght;
+		allRects.splice(lastAdded, lastAdded);
 	}
