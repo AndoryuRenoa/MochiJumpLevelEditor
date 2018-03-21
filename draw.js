@@ -1,5 +1,5 @@
 /** Optional additional to Do:
-* test delete last addition button (does document need to be updated?)
+* test delete last addition button (does document need to be updated?) * Would be cleaner just to use pop()
 * add mochi start point
 * custom platform brush size option
 * Current reading: https://www.w3schools.com/js/js_json_intro.asp
