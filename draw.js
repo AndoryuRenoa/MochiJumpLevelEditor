@@ -8,7 +8,8 @@
 * continued: https://stackoverflow.com/questions/7071544/post-from-xmlhttp-with-parameters
 */
 
-/** okay, i think a for(i=0; i<.length;i++) will work if I had the code to output to a database! time to learn how to do that!!!
+/** use (i=0; i<.length;i++) to create output for DB
+* NOTE! Occassionally I get a float value for value for x or y: make sure you cast value to int either in js or php!
 */
 
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
