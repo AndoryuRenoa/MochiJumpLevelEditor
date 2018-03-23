@@ -3,7 +3,6 @@
 /** the time has come to try to move data from the mJLE page to else where. In order to do this I will need a PHP script
 * okay so current questions:
 * 1. will SQL let you write a new table over an old one?
-* 2. should I break apart the PHP files depending on what they will do and call different PHP files from Javascript dependant on task?
 **/
 
 <?php
