@@ -87,3 +87,10 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		var lastAdded = allRects.lenght;
 		allRects.splice(lastAdded, lastAdded);
 	}
+	
+	function callLevel(){
+		alert("This feature is not yet implimented");
+	}
+	function createNewLevel(){
+		alert ("This feature is not yet implimented");
+	}
