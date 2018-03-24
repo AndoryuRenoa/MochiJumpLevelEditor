@@ -1,7 +1,11 @@
 /** Optional additional to Do:
-* test delete last addition button (does document need to be updated?) * Would be cleaner just to use pop()
+* Undo button works, but in working with it I realize that 2 of every object is being created, and I do not know why, adding removeChild
+* the end of the creation function keeps it from creating anything, so I'm not sure what exactly is going on here, but the short fix is
+* to duplicate the undo script twice.
 * add mochi start point
-* custom platform brush size option
+*
+*
+*
 * Current reading: https://www.w3schools.com/js/js_json_intro.asp
 * continued: https://blog.garstasio.com/you-dont-need-jquery/ajax/
 * continued: https://www.kirupa.com/html5/making_http_requests_js.htm
@@ -83,9 +87,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 // have not tested the function below! May need line to update document!
 	function delLastAdded(){
-		allRects = svg.getElementsByTagName("*");
-		var lastAdded = allRects.lenght;
-		allRects.splice(lastAdded, lastAdded);
+		svg.removeChild(svg.lastChild);
+		svg.removeChild(svg.lastChild);
 	}
 	
 	function callLevel(){
