@@ -76,8 +76,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		svg.removeChild(svg.lastChild);
 		svg.removeChild(svg.lastChild);
 	}
-	
-	function callLevel(){
+// fix the format below, don't know how it lost it's indendation	
+function callLevel(){
     var levelName = document.getElementsByID("levelName");
     // create xmlrequest to send levelName to "RetrieveLevel.php";
     xhttp.onreadystatechange = function(){
@@ -87,13 +87,23 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		    // into the paint box, I should create a more functional clearAll() that I can call as the first line of this inner
 		    // function
     		}
-	xhttp.open("POST", "RetrieveLevel.PHP", true);
+    };
+	xhttp.open("POST", "RetrieveLevel.php?q=", true);
 	xhttp.send(levelName);
-    alert("This feature is not yet implimented");
+    alert("Feature currently being tested");
 
-	}
-	function createNewLevel(){
+}
+function createNewLevel(){
     var levelName = document.getElementsByID("levelName");
     // create xmlrequest to send levelName to "CreateTable.php";
+    xhttp.onreadystatechange = function(){
+	    if (this.readyState == 4 && this.status == 200{
+		alert ("connection success");
+	    // In this instance I just need to be sure that the table's name is saved correctly and not already taken
 		alert ("This feature is not yet implimented");
 	}
+     };
+	xhttp.open("POST", "TableMaker.php?q=", true);
+	xhttp.send(levelName);
+	alert ("Feature currently being tested");
+}
