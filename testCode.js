@@ -11,6 +11,7 @@
     var brushSize = 5;
     var allRects;
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
+    var xhttp = new XMLHttpRequest();
 document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
 		cordsFunction(event);
@@ -61,6 +62,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		brushSize = 150;
 	}
 	function clearAll(){
+		// this needs to be reworked to actually delete everything in the svg "i = 0, while i<.length, i++" type of situation
 		location.reload();
 	}
 	function getCoords(){
@@ -78,7 +80,17 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	function callLevel(){
     var levelName = document.getElementsByID("levelName");
     // create xmlrequest to send levelName to "RetrieveLevel.php";
-		alert("This feature is not yet implimented");
+    xhttp.onreadystatechange = function(){
+	    if (this.readyState == 4 && this.status ==200){
+		    alert ("connections successful"); // I need to think of what I want to put here
+		    // okay the input I receive from this will be this.reponseText; Possibly a JSON object that will need to be worked
+		    // into the paint box, I should create a more functional clearAll() that I can call as the first line of this inner
+		    // function
+    		}
+	xhttp.open("POST", "RetrieveLevel.PHP", true);
+	xhttp.send(levelName);
+    alert("This feature is not yet implimented");
+
 	}
 	function createNewLevel(){
     var levelName = document.getElementsByID("levelName");
