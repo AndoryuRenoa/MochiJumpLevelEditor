@@ -107,3 +107,15 @@ function createNewLevel(){
 	xhttp.send(levelName);
 	alert ("Feature currently being tested");
 }
+function submitLevel(){
+	allRects = svg.getElementsByTagName("*");
+	var JSONRects = JSON.stringify(allRects);
+	xhttp.onreadystatechange = function(){
+		if (tis.readyState == 4 && this.staus ==200){
+			alert ("connection successful");
+		}
+	};
+	xhttp.open("POST", "SaveLevel.php?q=", true);
+	// this needs to be tested and should this and all other posts include .setRequestHeader?
+	xhttp.send(JSONRects);
+}	
