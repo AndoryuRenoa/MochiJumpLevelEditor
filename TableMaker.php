@@ -1,9 +1,8 @@
 // this will house the working code for using PHP to add to the mySQL database. Once complete it can be moved/renamed elsewhere
 
 /** the time has come to try to move data from the mJLE page to else where. In order to do this I will need a PHP script
-* okay so current questions:
-* 1. will SQL let you write a new table over an old one?
-* http://php.net/manual/en/reserved.variables.post.php
+* okay so current project: move arrays containing svg rectangles to and from the database: the below is just for creating a new table
+* and it is pretty much done.
 **/
 
 <?php
