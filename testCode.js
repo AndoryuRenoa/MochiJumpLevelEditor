@@ -88,7 +88,7 @@ function callLevel(){
 		    // function
     		}
     };
-	xhttp.open("POST", "RetrieveLevel.php?q=", true);
+	xhttp.open("POST", "RetrieveLevel.php?q=", true); // maybe I can use different t=,q= to send the table name outside of the array?
 	xhttp.send(levelName);
     alert("Feature currently being tested");
 
