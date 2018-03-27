@@ -10,7 +10,7 @@ $severname = ""//add server name
 $username = ""//add username
 $password = ""//add password
 $dbname = ""//add database! add database name
-$tablename = htmlspecialchars($_POST['q']); // I think this is correct
+$tablename = htmlspecialchars($_POST['q']); // I think this is correct; the special chars should help avoid exploits
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
