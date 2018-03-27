@@ -116,7 +116,8 @@ function submitLevel(){
 		}
 	};
 	xhttp.open("POST", "SaveLevel.php?q=", true);
-	// this needs to be tested and should this and all other posts include .setRequestHeader?
+	// this needs to be tested and should this and all other posts include .setRequestHeader? (shouldn't need to as long as it
+	// is interperted properly by the receiving PHP code
 	// this also needs to include the name of the Table! Maybe this can be done via PHP?
 	xhttp.send(JSONRects);
 }	
