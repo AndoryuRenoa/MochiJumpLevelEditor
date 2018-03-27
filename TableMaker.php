@@ -31,7 +31,5 @@ if ($conn->query($sql) === true){
   echo "Errpr creating new level: ". $conn->error;
 }
 
-// still need to fill in the level with the data passed by JS
-
 $conn-> close();
 ?>
