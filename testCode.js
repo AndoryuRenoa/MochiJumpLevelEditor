@@ -78,6 +78,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 // fix the format below, don't know how it lost it's indendation
 // IMPORTANT implement htmlspecialchars in the forms below in order to keep page safe/secure
+// see: https://www.w3schools.com/php/php_form_validation.asp
 function callLevel(){
     var levelName = document.getElementsByID("levelName");
     // create xmlrequest to send levelName to "RetrieveLevel.php";
