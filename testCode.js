@@ -76,7 +76,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		svg.removeChild(svg.lastChild);
 		svg.removeChild(svg.lastChild);
 	}
-// fix the format below, don't know how it lost it's indendation	
+// fix the format below, don't know how it lost it's indendation
+// IMPORTANT implement htmlspecialchars in the forms below in order to keep page safe/secure
 function callLevel(){
     var levelName = document.getElementsByID("levelName");
     // create xmlrequest to send levelName to "RetrieveLevel.php";
