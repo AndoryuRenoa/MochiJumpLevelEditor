@@ -11,11 +11,11 @@ $severname = ""//add server name
 $username = ""//add username
 $password = ""//add password
 $dbname = ""//add database! add database name
-$tablename = $_POST['q'] // I think this is correct
+$tablename = htmlspecialchars($_POST['q']); // I think this is correct
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
-  die("Cpnnection failed: ".$conn->connect_error);
+  die("Connection failed: ".$conn->connect_error);
 }
   // below table will always have the same rows
 $sql = "CREATE TABLE $tablename (
