@@ -80,7 +80,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 // IMPORTANT implement htmlspecialchars in the forms below in order to keep page safe/secure
 // see: https://www.w3schools.com/php/php_form_validation.asp
 function callLevel(){
-    var levelName = document.getElementsByID("levelName");
+    var levelName = document.getElementsByID("levelName").value; //I think the .value is necessary
     // create xmlrequest to send levelName to "RetrieveLevel.php";
     xhttp.onreadystatechange = function(){
 	    if (this.readyState == 4 && this.status ==200){
@@ -96,7 +96,7 @@ function callLevel(){
 
 }
 function createNewLevel(){
-    var levelName = document.getElementsByID("levelName");
+    var levelName = document.getElementsByID("levelName").value; //I think the .value is necessary
     // create xmlrequest to send levelName to "CreateTable.php";
     xhttp.onreadystatechange = function(){
 	    if (this.readyState == 4 && this.status == 200{
@@ -117,7 +117,7 @@ function submitLevel(){
 			alert ("connection successful");
 		}
 	};
-	xhttp.open("POST", "SaveLevel.php?q=", true);
+	xhttp.open("POST", "SaveLevel.php", true); // no ?q= tag
 	// this needs to be tested (also I'm currently not using .setRequestHeader, don't think I need it as long as the PHP code takes
 	// that into account?)
 	// this also needs to include the name of the Table! Maybe this can be done via PHP?
