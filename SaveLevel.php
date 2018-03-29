@@ -15,6 +15,7 @@ if ($conn->connect_error){
   * if (tableName == null){
   * include(RetreiveTable.php);
   *}
+  * solution may also to use tags when posting via js i.e. "SaveLevel.php?q=t"
   * for further reading: https://www.w3schools.com/php/php_includes.asp **/
   
   //Need to remove previous rows from table
