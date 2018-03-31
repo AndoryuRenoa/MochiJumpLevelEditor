@@ -12,6 +12,11 @@ $password = ""//add password
 $dbname = ""//add database! add database name
 $tablename = htmlspecialchars($_POST['q']); // I think this is correct; the special chars should help avoid exploits
 
+//I'm going to attempt to uses sessions to carry over the variable $tablename across different php files
+
+sessions_start();
+$_  SESSION['tablename']=$tablename;
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
   die("Connection failed: ".$conn->connect_error);
