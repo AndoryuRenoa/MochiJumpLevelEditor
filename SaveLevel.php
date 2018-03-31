@@ -3,7 +3,9 @@ $severname = ""//add server name
 $username = ""//add username
 $password = ""//add password
 $dbname = ""//add database! add database name
-$tableName = "" // need to be sure that the table name and the JSON array are accessed properly
+  
+sessions_start();
+$tablename=$_  SESSION['tablename'];
   
 $conn = new mysqli ($servername, $username, $password, $dbname);
 if ($conn->connect_error){
