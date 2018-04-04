@@ -6,6 +6,7 @@ $password = ""//add password
 $dbname = ""//add database! add database name
 $tablename= htmlspecialchars($POST[q]);
 
+
 sessions_start();
 $_  SESSION['tablename']=$tablename;
 
@@ -21,6 +22,16 @@ $_  SESSION['tablename']=$tablename;
 * At this stage I'm thinking of creating a db and test with test values in it so see if I can retrieve this properly
 **/
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error){
+  die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * from $tablename";
+// result here will need to be an array
+
+$result = $conn->query($sql);
+
+// need to arrange result output!
   
   
   
