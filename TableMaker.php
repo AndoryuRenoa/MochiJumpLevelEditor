@@ -26,7 +26,7 @@ $sql = "CREATE TABLE $tablename (
 startX INT(),
 startY INT(),
 width INT(),
-Height(),
+height INT(),
 )
 
 if ($conn->query($sql) === true){
