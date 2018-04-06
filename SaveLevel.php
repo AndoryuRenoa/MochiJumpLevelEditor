@@ -22,6 +22,8 @@ if (conn -> query($deleteRows) === true){
   // optionally put something here, however if this is the first time saving the level this will always fail
 } 
   //Need to submit JSON value into rows for table (last step)
+$levelImport = json_decode($POST[]);
+
   
 $conn-> close();  
   ?>
