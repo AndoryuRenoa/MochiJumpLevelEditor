@@ -23,7 +23,13 @@ if (conn -> query($deleteRows) === true){
 } 
   //Need to submit JSON value into rows for table (last step)
 $levelImport = json_decode($POST[]);
-
+  // still need to conver this to an sql query:
+for ($row = 0, $row< sizeof($levelImport)+1, $row++){
+  // do I need anything here
+  for ($col =0, $ row <4,$col++){
+    // definitely need something here
+  }
+}
   
 $conn-> close();  
   ?>
