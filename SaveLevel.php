@@ -25,11 +25,16 @@ if (conn -> query($deleteRows) === true){
 $levelImport = json_decode($POST[]);
   // still need to conver this to an sql query:
 for ($row = 0, $row< sizeof($levelImport)+1, $row++){
-  // do I need anything here
-  for ($col =0, $ row <4,$col++){
-    // definitely need something here
-  }
+  // okay let's try this:
+  $sql .= "INSERT INTO $tablename (startX, startY, width, height) VALUES ($col[0],$col[1],$col[2],$col[3]);
 }
-  
+
+if (conn-> multi_query($sql) === true){
+ echo "saved successfully"
+ } else{
+ echo "problem saving level"
+ }
+ 
+
 $conn-> close();  
   ?>
