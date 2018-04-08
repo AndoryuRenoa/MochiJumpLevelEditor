@@ -1,8 +1,5 @@
-// this will house the working code for using PHP to add to the mySQL database. Once complete it can be moved/renamed elsewhere
-
-/** the time has come to try to move data from the mJLE page to else where. In order to do this I will need a PHP script
-* okay so current project: move arrays containing svg rectangles to and from the database: the below is just for creating a new table
-* and it is pretty much done.
+/** the time has come to try to move data from the mJLE page to else where.
+* the below code needs to be tested, this however lays the framework for how to get the svg objects from JS to PHP to SQL
 **/
 
 <?php
