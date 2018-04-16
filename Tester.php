@@ -21,8 +21,6 @@ if ($conn->query($sql) === true){
   echo "Error: "conn.error;
 }
 
-//still need to make table and add two rows:
-
 $sql2 = "CREATE TABLE $tablename(
 startX INT(),
 startY INT(),
@@ -34,6 +32,8 @@ if ($conn->query($sql2) === true){
 }else{
   echo "Error: "conn.error;
 }
+
+//still need to make rows;
 
 //end
 $conn->close();
