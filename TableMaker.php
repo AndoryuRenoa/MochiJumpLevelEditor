@@ -24,7 +24,7 @@ startX INT(),
 startY INT(),
 width INT(),
 height INT(),
-)
+)";
 
 if ($conn->query($sql) === true){
   echo "New Level Name accepted";
