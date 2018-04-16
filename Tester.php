@@ -4,6 +4,7 @@
 $servername = "localhost";
 $username = "input";
 $password = "input";
+$dbname = "levelDB";
 
 $conn = new mysqil($servername, $username, $password);
 
@@ -12,11 +13,16 @@ $if ($conn->connect_error){
 }
 
 // create database
-$sql = "CREATE DATABASE levelDB";
+$sql = "CREATE DATABASE $dbname";
 if ($conn->query($sql) === true){
   echo "Database created successfully";
 }else{
   echo "Error: "conn.error;
 }
+
+//still need to make table and add two rows:
+
+//end
+$conn->close();
 
 ?>
