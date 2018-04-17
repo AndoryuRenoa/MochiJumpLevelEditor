@@ -113,7 +113,7 @@ function submitLevel(){
 	allRects = svg.getElementsByTagName("*");
 	var JSONRects = JSON.stringify(allRects);
 	xhttp.onreadystatechange = function(){
-		if (tis.readyState == 4 && this.staus ==200){
+		if (this.readyState == 4 && this.status ==200){
 			alert ("connection successful");
 		}
 	};
@@ -122,4 +122,13 @@ function submitLevel(){
 	// that into account?)
 	// this also needs to include the name of the Table! Maybe this can be done via PHP?
 	xhttp.send(JSONRects);
-}	
+}
+function tester(){
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status ==200){
+			alert("connection successful");
+		}
+	};
+	xhttp.open("GET", "tester.php", true);
+	xhttp.send;
+}
