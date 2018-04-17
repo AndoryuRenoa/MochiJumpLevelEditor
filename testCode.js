@@ -132,5 +132,5 @@ function tester(){
 		}
 	};
 	xhttp.open("GET", "tester.php", true);
-	xhttp.send;
+	xhttp.send();
 }
