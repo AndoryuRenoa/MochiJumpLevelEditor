@@ -123,6 +123,8 @@ function submitLevel(){
 	// this also needs to include the name of the Table! Maybe this can be done via PHP?
 	xhttp.send(JSONRects);
 }
+
+// test this first:
 function tester(){
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status ==200){
