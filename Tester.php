@@ -33,7 +33,14 @@ if ($conn->query($sql2) === true){
   echo "Error: "conn.error;
 }
 
-//still need to make rows;
+$sql3 = "Insert into $tablename (startX, startU, width, height)
+values (5,5, 50,50), (100,100,50,50)"
+
+if($conn->queary($sql3) === true){
+  echo "Insertion Complete";
+}else{
+  echo "Error: "conn.error;
+}
 
 //end
 $conn->close();
