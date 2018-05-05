@@ -19,7 +19,6 @@ $_  SESSION['tablename']=$tablename;
 *then convert everything in array to JSON
 * then in js convert JSON to an array, then inside the array for i=0, i>lenght, i++ assign the four values  in 
 * array[i] to svg (x,y,width,heigh).
-* At this stage I'm thinking of creating a db and test with test values in it so see if I can retrieve this properly
 **/
 
 $conn = new mysqli($servername, $username, $password, $dbname);
