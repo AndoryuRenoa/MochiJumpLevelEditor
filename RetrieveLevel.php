@@ -38,7 +38,7 @@ if ($result -> num_rows >0){
     $toBecomeJSON = array($row["startX"],$row["startY"],$row["width"],$row["height"];
   }
 }
-
+// should the below be in the if statement combined with an else echo "This name is not in the database"; ?
 $JSONobject = json_encode($toBecomeJSON);
 echo $JSONobject;
   
