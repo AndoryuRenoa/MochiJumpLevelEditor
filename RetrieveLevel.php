@@ -37,12 +37,13 @@ if ($result -> num_rows >0){
     //okay here we need to create an object to later convert to JSON that will pick up and return the svgs to the js
     $toBecomeJSON = array($row["startX"],$row["startY"],$row["width"],$row["height"];
   }
-}
-// should the below be in the if statement combined with an else echo "This name is not in the database"; ?
 $JSONobject = json_encode($toBecomeJSON);
 echo $JSONobject;
-  
-// need to arrange result output!
+}
+ else{
+   echo "This name is not in the database";
+ }
+// need to arrange result output in js!
   
   
   
