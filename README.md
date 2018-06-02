@@ -1,2 +1,2 @@
 # MochiJumpLevelEditor
-Currently working on sending and receiving data to mySQL
+Currently working on alternatives to WAMP/PHP setup I was previously using
