@@ -1,2 +1,2 @@
 # MochiJumpLevelEditor
-Currently working on alternatives to WAMP/PHP setup I was previously using
+I've decided to rewrite this using Spring/Java instead of WAMP/PHP. Will move old project into /Archive
