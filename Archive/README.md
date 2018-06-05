@@ -1,2 +1,2 @@
 # MochiJumpLevelEditor
-I've decided to rewrite this using Spring/Java instead of WAMP/PHP. Will move old project into /Archive
+The first attempt to write the backend of this project was written in PHP. That code can be found here. This is kept here just for my records. This code will no longer be updated as I prefer working with Spring
