@@ -18,7 +18,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
   die("Connection failed: ".$conn->connect_error);
 }
-  // below table will always have the same rows
+  // those ()s aren't proper synatx.
 $sql = "CREATE TABLE $tablename (
 startX INT(),
 startY INT(),
