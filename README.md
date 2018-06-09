@@ -6,8 +6,6 @@ Single HTML/JS Page with working "paint" like program
 
 Spring (Java) built application to host the webpage and transfer data to and from MySQL.
 
-Current To Do:
+Future To Do:
 
-Change project to include Thymeleaf, this will enhance funcationality greatly.
-
-https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#the-good-thymes-virtual-grocery @ 4.11
+Turn this into a multipage website with user login. For that kind of functionality it would be a good idea to use Thymeleaf.
