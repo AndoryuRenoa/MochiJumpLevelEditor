@@ -92,7 +92,13 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 	
 	function callLevel(){
-		alert("This feature is not yet implimented");
+		alert("Testing");
+		var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/test/returnAll", true);
+			xhttp.onload = function (){
+				console.log("hi "+xhttp.responseText);
+			};
+			xhttp.send();
 	}
 	function createNewLevel(){
 		alert ("This feature is not yet implimented");
