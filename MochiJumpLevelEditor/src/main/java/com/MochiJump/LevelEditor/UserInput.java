@@ -10,6 +10,11 @@ import javax.persistence.Id;
 
 // will probably change the Integer's to Integer[] down the line
 
+// read below and formulate how you plan to take those svg rectangle from the client side and convert them into something that can be properly placed into
+// MySQL
+
+// https://stackoverflow.com/questions/40247556/spring-boot-automatic-json-to-object-at-controller
+
 @Entity
 public class UserInput {
 	@Id
