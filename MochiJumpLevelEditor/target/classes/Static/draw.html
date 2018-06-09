@@ -142,7 +142,18 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			xhttp.send();
 	}
 	function createNewLevel(){
-		alert ("This feature is not yet implimented");
+		alert ("Testing");
+		var xhttp = new XMLHttpRequest();
+		var levelName = document.getElementById("levelName").value;
+		var nameJson = JSON.stringify({"tableName": levelName});
+		xhttp.open("POST", "/test/json")
+		xhttp.onreadystatechange = function(){
+			if (xhttp.readyState == 4 && xhttp.status == 200){
+			console.log ("sent");	
+			}
+		};
+		xhttp.send(nameJson);
 	}
+
 </script>
 </html>

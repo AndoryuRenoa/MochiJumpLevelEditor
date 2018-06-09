@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.MochiJump.LevelEditor.UserInput;
 import com.MochiJump.LevelEditor.UserInputRepo;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Controller
 @RequestMapping(path="/test")
@@ -51,4 +54,10 @@ public class UserInputController {
 	public @ResponseBody Iterable<UserInput> getAllUserInputs(){
 		return UserInputRepo.findAll();
 	}
+	//the @JsonProperty below doesn't seem to do anything while inside the argument
+	@PostMapping(path="/json")	
+	public @ResponseBody void jsonConTest(@RequestBody @JsonProperty("tableName") String s) {
+		System.out.println(s);
+	}
+	
 }
