@@ -17,6 +17,20 @@ public class UserInputController {
 	private UserInputRepo UserInputRepo;
 	
 	@GetMapping(path="/add")
+	//could do something like:
+	/* 
+	 * public void @ResponseBody String addNewUserInput (@RequestBody Map<String, Object> Incoming) throws Exception{
+	 * 
+	 * UserInput i = new UserInput();
+	 * 
+	 * for (Incoming.Entry<String, String> entry : Incoming.entrySet()){
+	 *   if (entry.key.equals(tableName){
+	 *   
+	 * 	}
+	 * }
+	 * 
+	 * could convert below to something simple that just outputs plain text and returns it to see what you're looking at!
+	 */
 	public @ResponseBody String addNewUserInput (@RequestParam String tableName,
 			@RequestParam Integer startX,
 			@RequestParam Integer startY,
