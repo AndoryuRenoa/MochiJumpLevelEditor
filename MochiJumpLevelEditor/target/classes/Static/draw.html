@@ -122,9 +122,25 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 	function getCoords(){
 			allRects = svg.getElementsByTagName("*");
-			var testOutput = allRects[0].getBoundingClientRect();
-			alert(allRects.length+" objects have been created. Attributes for the first painted object is: x="+testOutput.left+", y="+ testOutput.top+",width="+testOutput.width+",height="+testOutput.height);
-			//^^ I'm so close to being able to export this data to a database!!!
+			var rectArray = {};
+			function fillArray (){
+				for (var i=0; i<allRects.length; i++){
+				rectArray[i] = {'x' : allRects[i].getBoundingClientRect().x, 
+						'y': allRects[i].getBoundingClientRect().y, 
+						'height' : allRects[i].getBoundingClientRect().height, 
+						'width' : allRects[i].getBoundingClientRect().width}	
+				}
+			}
+			fillArray();
+			var xhttp = new XMLHttpRequest();
+			var rectsJson = JSON.stringify(rectArray);
+			xhttp.open("POST", "/test/json")
+			xhttp.onreadystatechange = function(){
+				if (xhttp.readyState == 4 && xhttp.status == 200){
+				console.log ("sent");	
+				}
+			};
+			xhttp.send(rectsJson);			
 	}
 // have not tested the function below! May need line to update document!
 	function delLastAdded(){
