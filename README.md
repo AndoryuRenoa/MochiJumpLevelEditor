@@ -12,6 +12,8 @@ Able to retrieve JSON from webpage result example:
 
 Currently working on how to convert this into a POJO
 
+Creating seperate project (housed in questions/WorkingWithJSON) to test solutions for the above more quickly.
+
 
 Note to Future Me:
 
