@@ -12,7 +12,9 @@ Able to retrieve JSON from webpage result example:
 
 Currently working on how to convert this into a POJO
 
-Creating seperate project (housed in questions/WorkingWithJSON) to test solutions for the above more quickly.
+Creating seperate project to test solutions for the above more quickly. Link below:
+
+https://github.com/AndoryuRenoa/questions/blob/master/WorkingWithJSON/src/main/java/WorkingWithJSON.java
 
 
 Note to Future Me:
