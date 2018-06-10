@@ -13,6 +13,6 @@ Able to retrieve JSON from webpage result example:
 Currently working on how to convert this into a POJO
 
 
-Future To Do:
+Note to Future Me:
 
-Turn this into a multipage website with user login. For that kind of functionality it would be a good idea to use Thymeleaf.
+If this turns into something outside of a single page app use Thymeleaf.
