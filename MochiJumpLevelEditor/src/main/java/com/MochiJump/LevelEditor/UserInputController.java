@@ -1,5 +1,8 @@
 package com.MochiJump.LevelEditor;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +22,7 @@ public class UserInputController {
 	@Autowired
 	private UserInputRepo UserInputRepo;
 	
-	@GetMapping(path="/add")
+//	@GetMapping(path="/add")
 	//could do something like:
 	/* 
 	 * public void @ResponseBody String addNewUserInput (@RequestBody Map<String, Object> Incoming) throws Exception{
@@ -33,7 +36,7 @@ public class UserInputController {
 	 * }
 	 * 
 	 * could convert below to something simple that just outputs plain text and returns it to see what you're looking at!
-	 */
+	 *
 	public @ResponseBody String addNewUserInput (@RequestParam String tableName,
 			@RequestParam Integer startX,
 			@RequestParam Integer startY,
@@ -48,16 +51,19 @@ public class UserInputController {
 		UserInputRepo.save(i);
 		return "LevelSaved";
 		
-	}
+	} */
 	
 	@GetMapping(path="/returnAll")
 	public @ResponseBody Iterable<UserInput> getAllUserInputs(){
 		return UserInputRepo.findAll();
 	}
-	//the @JsonProperty below doesn't seem to do anything while inside the argument
+	//the @JsonProperty seems to remove one layer of nesting...
+	//setting the wrong argument results in error 415 client side
+	// at least I can get the output as a string, I'll have to work on turning the result
+	// into a POJO 
 	@PostMapping(path="/json")	
-	public @ResponseBody void jsonConTest(@RequestBody @JsonProperty("tableName") String s) {
-		System.out.println(s);
+	public @ResponseBody void jsonConTest(@RequestBody @JsonProperty String x){
+		System.out.println(x);
 	}
 	
 }

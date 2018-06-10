@@ -122,10 +122,12 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 	function getCoords(){
 			allRects = svg.getElementsByTagName("*");
+			var levelName = document.getElementById("levelName").value;
 			var rectArray = {};
 			function fillArray (){
 				for (var i=0; i<allRects.length; i++){
-				rectArray[i] = {'x' : allRects[i].getBoundingClientRect().x, 
+				rectArray[i] = { 'levelName': levelName,
+						'x' : allRects[i].getBoundingClientRect().x, 
 						'y': allRects[i].getBoundingClientRect().y, 
 						'height' : allRects[i].getBoundingClientRect().height, 
 						'width' : allRects[i].getBoundingClientRect().width}	
@@ -137,7 +139,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			xhttp.open("POST", "/test/json")
 			xhttp.onreadystatechange = function(){
 				if (xhttp.readyState == 4 && xhttp.status == 200){
-				console.log ("sent");	
+				alert("Level Saved");	
 				}
 			};
 			xhttp.send(rectsJson);			

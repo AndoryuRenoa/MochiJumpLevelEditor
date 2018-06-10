@@ -1,5 +1,7 @@
 package com.MochiJump.LevelEditor;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,15 +23,15 @@ public class UserInput {
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-	private String tableName;
+	private String levelName;
 	
-	private Integer startX;
+	private ArrayList<Integer> startX;
 	
-	private Integer startY;
+	private ArrayList<Integer> startY;
 	
-	private Integer width;
+	private ArrayList<Integer> width;
 	
-	private Integer height;
+	private ArrayList<Integer> height;
 	
 	public Integer getId () {
 		return id;
@@ -39,42 +41,42 @@ public class UserInput {
 		this.id = id;
 	}
 	
-	public String getTableName() {
-		return tableName;
+	public String getlevelName() {
+		return levelName;
 	}
 	
-	public void setTableName(String tableName) {
-		this.tableName=tableName;
+	public void setTableName(String levelName) {
+		this.levelName=levelName;
 	}
 	
-	public Integer getStartX() {
+	public ArrayList<Integer> getStartX() {
 		return startX;
 	}
-	public void setStartX(Integer startX) {
+	public void setStartX(ArrayList<Integer> startX) {
 		this.startX = startX;
 	}
 	
-	public Integer getStartY() {
+	public ArrayList<Integer> getStartY() {
 		return startY;
 	}
 	
-	public void setStartY (Integer startY) {
+	public void setStartY (ArrayList<Integer> startY) {
 		this.startY = startY;
 	}
 	
-	public Integer getWidth () {
+	public ArrayList<Integer> getWidth () {
 		return width;
 	}
 	
-	public void setWidth (Integer width) {
+	public void setWidth (ArrayList<Integer> width) {
 		this.width = width;
 	}
 	
-	public Integer getHeight() {
+	public ArrayList<Integer> getHeight() {
 		return height;
 	}
 	
-	public void setHeight (Integer height) {
+	public void setHeight (ArrayList<Integer> height) {
 		this.height = height;
 	}
 	
