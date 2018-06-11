@@ -64,6 +64,11 @@ public class UserInputController {
 	@PostMapping(path="/json")	
 	public @ResponseBody void jsonConTest(@RequestBody @JsonProperty String x){
 		System.out.println(x);
+		
+	/* make use of return features here return a string that indicates the save was successful or not
+	* will need to include a check by recalling all levelnames to see if current level name does not already exist
+	* if it does will either need to override or ask if user wants to override, this is why return String is important.
+	*/
 	}
 	
 }
