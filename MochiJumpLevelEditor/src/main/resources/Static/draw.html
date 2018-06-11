@@ -126,6 +126,9 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			var rectArray = {};
 			function fillArray (){
 				for (var i=0; i<allRects.length; i++){
+					
+				// maybe the issue is the way i've done this, perhaps it'd be better to have a single instance
+				// of the object and then fill it with arrays. That makes more sense.
 				rectArray[i] = { 'levelName': levelName,
 						'x' : allRects[i].getBoundingClientRect().x, 
 						'y': allRects[i].getBoundingClientRect().y, 
