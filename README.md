@@ -16,6 +16,10 @@ Creating seperate project to test solutions for the above more quickly. Link bel
 
 https://github.com/AndoryuRenoa/questions/blob/master/WorkingWithJSON/src/main/java/WorkingWithJSON.java
 
+Reading:
+
+https://dzone.com/articles/processing-json-with-jackson
+
 
 Note to Future Me:
 
