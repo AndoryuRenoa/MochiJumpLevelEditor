@@ -12,11 +12,7 @@ Changes JSON Output. example:
 
 i.e. [string,double[],double[],int[],int[]];
 
-Currently working on how to convert this into a POJO
-
-Creating seperate project to test solutions for the above more quickly. Link below:
-
-https://github.com/AndoryuRenoa/questions/blob/master/WorkingWithJSON/src/main/java/WorkingWithJSON.java
+Currently working on how to convert this into a POJO.
 
 Reading:
 
