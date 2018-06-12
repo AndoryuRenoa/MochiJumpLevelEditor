@@ -6,11 +6,9 @@ Single HTML/JS Page with working "paint" like program
 
 Spring (Java) built application to host the webpage and transfer data to and from MySQL (Incomplete):
 
-Changes JSON Output. example:
+Changed JSON Output. example:
 
-["test",[283.5,283.5,425.5],[213.5,213.5,163.5],[5,5,5],[5,5,5]]
-
-i.e. [string,double[],double[],int[],int[]];
+{"levelName":"test","xstart":[184.5,360.5,209.5,264.5],"ystart":[97.5,158.5,214.5,110.5],"width":[5,5,5,5],"height":[5,5,5,5]}
 
 Currently working on how to convert this into a POJO.
 
