@@ -57,10 +57,7 @@ public class UserInputController {
 	public @ResponseBody Iterable<UserInput> getAllUserInputs(){
 		return UserInputRepo.findAll();
 	}
-	//the @JsonProperty seems to remove one layer of nesting...
-	//setting the wrong argument results in error 415 client side
-	// at least I can get the output as a string, I'll have to work on turning the result
-	// into a POJO 
+	//With the format as it currently is should be able to use @Request Param and return corresponding objects as POJOs
 	@PostMapping(path="/json")	
 	public @ResponseBody void jsonConTest(@RequestBody @JsonProperty String x){
 		System.out.println(x);
