@@ -135,7 +135,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			 width [i] = allRects[i].getBoundingClientRect().width}	
 				}
 			fillArray();
-			var collection = [levelName, xstart, ystart, width, height];
+			var collection = {levelName, xstart, ystart, width, height};
 			var xhttp = new XMLHttpRequest();
 			var rectsJson = JSON.stringify(collection);
 			xhttp.open("POST", "/test/json")
