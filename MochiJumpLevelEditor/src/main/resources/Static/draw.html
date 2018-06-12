@@ -123,22 +123,21 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	function getCoords(){
 			allRects = svg.getElementsByTagName("*");
 			var levelName = document.getElementById("levelName").value;
-			var rectArray = {};
+			var xstart= [];
+			var ystart =[];
+			var height =[];
+			var width = [];
 			function fillArray (){
 				for (var i=0; i<allRects.length; i++){
-					
-				// maybe the issue is the way i've done this, perhaps it'd be better to have a single instance
-				// of the object and then fill it with arrays. That makes more sense.
-				rectArray[i] = { 'levelName': levelName,
-						'x' : allRects[i].getBoundingClientRect().x, 
-						'y': allRects[i].getBoundingClientRect().y, 
-						'height' : allRects[i].getBoundingClientRect().height, 
-						'width' : allRects[i].getBoundingClientRect().width}	
+			xstart [i] = allRects[i].getBoundingClientRect().x, 
+			ystart [i] = allRects[i].getBoundingClientRect().y, 
+			height [i] = allRects[i].getBoundingClientRect().height, 
+			 width [i] = allRects[i].getBoundingClientRect().width}	
 				}
-			}
 			fillArray();
+			var collection = [levelName, xstart, ystart, width, height];
 			var xhttp = new XMLHttpRequest();
-			var rectsJson = JSON.stringify(rectArray);
+			var rectsJson = JSON.stringify(collection);
 			xhttp.open("POST", "/test/json")
 			xhttp.onreadystatechange = function(){
 				if (xhttp.readyState == 4 && xhttp.status == 200){
