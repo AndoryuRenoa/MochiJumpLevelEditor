@@ -123,19 +123,19 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	function getCoords(){
 			allRects = svg.getElementsByTagName("*");
 			var levelName = document.getElementById("levelName").value;
-			var xstart= [];
-			var ystart =[];
+			var startX= [];
+			var startY =[];
 			var height =[];
 			var width = [];
 			function fillArray (){
 				for (var i=0; i<allRects.length; i++){
-			xstart [i] = allRects[i].getBoundingClientRect().x, 
-			ystart [i] = allRects[i].getBoundingClientRect().y, 
-			height [i] = allRects[i].getBoundingClientRect().height, 
-			 width [i] = allRects[i].getBoundingClientRect().width}	
+			startX [i] = Math.round(allRects[i].getBoundingClientRect().x), 
+			startY [i] = Math.round(allRects[i].getBoundingClientRect().y), 
+			height [i] = Math.round(allRects[i].getBoundingClientRect().height), 
+			 width [i] = Math.round(allRects[i].getBoundingClientRect().width)}	
 				}
 			fillArray();
-			var collection = {levelName, xstart, ystart, width, height};
+			var collection = {levelName, startX, startY, width, height};
 			var xhttp = new XMLHttpRequest();
 			var rectsJson = JSON.stringify(collection);
 			xhttp.open("POST", "/test/json")
