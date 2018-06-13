@@ -1,0 +1,1 @@
+Running MySQL on a windows computer can be frustrating. Remember to check windows firewall after an update
