@@ -14,6 +14,8 @@ Okay I can create an instance of the class I want with Jackson's Object Mapper. 
 
 To Do:
 
+Today: write UserInput.setLevelName() to include println this.levelName;
+
 Drop and recreate MySQL table to have proper columns
 
 Test/fix new UserInput class for populating said MySQL table
