@@ -54,7 +54,7 @@ public class UserInput {
 
 	public void setLevelName(String levelName) {
 		this.levelName=levelName;
-		System.out.println("Someone Tried to get levelName");
+		System.out.println(levelName);
 	}
 	
 
@@ -76,10 +76,12 @@ public class UserInput {
 
 	public ArrayList<Integer> getWidth () {
 		return width;
+
 	}
 
 	public void setWidth (ArrayList<Integer> width) {
 		this.width = width;
+		System.out.println(width);
 	}
 
 	public ArrayList<Integer> getHeight() {

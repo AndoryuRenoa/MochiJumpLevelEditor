@@ -66,38 +66,16 @@ public class UserInputController {
 	
 	//output here looks identical to what I'm trying to put in format-wise
 	@GetMapping(path="/returnAll")
-	public @ResponseBody String getAllUserInputs(){
-		UserInput i = new UserInput();
-		ArrayList <Integer> dummy = new ArrayList<Integer>();
-		dummy.add(1);
-		i.setLevelName("Hi");
-		i.setHeight(dummy);
-		i.setWidth(dummy);
-		i.setStartX(dummy);
-		i.setStartY(dummy);
-		try {
-		String iAsString = mapper.writeValueAsString(i);
-		return iAsString;
-		} catch (JsonMappingException e) {
-		    e.printStackTrace();
-		} catch (JsonGenerationException e) {
-		    e.printStackTrace();
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
-		return "didn't work";
-				
-		//return UserInputRepo.findAll();
+	public @ResponseBody Iterable <UserInput> getAllUserInputs(){
+		return UserInputRepo.findAll();
 	}
 	//ok well at least I'm know the setter is being called
 	@PostMapping(path="/json")	
 	public @ResponseBody void RecieverTest(@RequestBody String s){
 		try {
 		UserInput i = mapper.readValue(s, UserInput.class);
-		System.out.println(i.getlevelName());
-		System.out.println(i.getStartX());
-		System.out.println(i.getId());
-		System.out.println(i);
+		UserInputRepo.save(i);
+//		System.out.println(i.getStartX());
 		} catch (JsonMappingException e) {
 		    e.printStackTrace();
 		} catch (JsonGenerationException e) {
