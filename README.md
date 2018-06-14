@@ -12,6 +12,10 @@ Changed JSON Output. example:
 
 Okay I can create an instance of the class I want with Jackson's Object Mapper. I'm still unable to do it as a parameter of an @ResponseBody using Spring Boot without calling the Jackson API independently. Currently the UserInputController class is a mess it needs to be cleaned up, however, at least I'm on the right path. 
 
+Passing to SQL proves problematic due to data being too big for column, mannually turning it into a blob successfully saves, however then the /returnAll get statement fails with 500 error. Further reading:
+
+https://stackoverflow.com/questions/12400825/jpa-data-too-long-for-column-does-not-change
+
 To Do:
 
 Today: write UserInput.setLevelName() to include println this.levelName;
