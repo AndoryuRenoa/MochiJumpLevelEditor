@@ -16,6 +16,8 @@ Passing to SQL proves problematic due to data being too big for column, mannuall
 
 https://stackoverflow.com/questions/12400825/jpa-data-too-long-for-column-does-not-change
 
+Considering changing from SQL to NoSQL
+
 To Do:
 
 Today: write UserInput.setLevelName() to include println this.levelName;
