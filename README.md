@@ -10,7 +10,9 @@ Level save and
 
 To Do:
 
-Rewrite the JS for the clientside levelEditor so that the corresponding buttons have meaning.
+Rewrite the JS for the clientside levelEditor so that the corresponding buttons have meaning:
+
+	Start with Retrieve Level
 
 Test whether removing jackson api specific code will work and if it can be replaced with:
 	public @ResponseBody void RecieverTest(@RequestBody UserInput i)
