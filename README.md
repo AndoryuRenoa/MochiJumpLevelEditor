@@ -4,9 +4,11 @@ Current Status:
 
 Single HTML/JS Page with working "paint" like program
 
-Spring (Java) built application to host the webpage and transfer data to and from MySQL (Incomplete):
+Spring (Java) built application to host the webpage and transfer data to and from MySQL:
 
-Level save and 
+The backend is communicating effectively with the client and the MySQL server
+
+The last step is to tie it to the MochiJump app
 
 To Do:
 
