@@ -2,20 +2,20 @@ package com.MochiJump.LevelEditor;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-
-// this is my first attempt at trying to create a table that will hold the information I need for recording rectangle objects
+import javax.persistence.Lob;
 
 
 @Entity
+// Using the below or @Column (unique = true) does not seem to do anything
+// @Table(uniqueConstraints={@UniqueConstraint(columnNames={"levelName"})})
+// for now consider querying the database checking for the same name and then working in a 
+// way to drop that row if the user accepts client side
+
 public class UserInput {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -24,16 +24,20 @@ public class UserInput {
 
 	private String levelName;
 	
-
+	@Column(length = 1000000)
+	@Lob
 	private ArrayList<Integer> startX;
 	
-
+	@Column(length = 1000000)
+	@Lob
 	private ArrayList<Integer> startY;
 	
-
+	@Column(length = 1000000)
+	@Lob
 	private ArrayList<Integer> width;
 	
-
+	@Column(length = 1000000)
+	@Lob
 	private ArrayList<Integer> height;
 	
 
@@ -46,7 +50,7 @@ public class UserInput {
 		this.id = id;
 	}
 	
-
+	
 	public String getlevelName() {
 		return levelName;
 	}

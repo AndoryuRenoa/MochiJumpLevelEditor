@@ -146,20 +146,25 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			};
 			xhttp.send(rectsJson);			
 	}
-// have not tested the function below! May need line to update document!
+	
 	function delLastAdded(){
 		svg.removeChild(svg.lastChild);
 		svg.removeChild(svg.lastChild);
 	}
 	
+	
+// Currently working on this!
+
 	function callLevel(){
 		alert("Testing");
 		var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "/test/returnAll", true);
+		var name = document.getElementById("levelName").value;
+			xhttp.open("GET", "/test/return?name="+name+"", true);
 			xhttp.onload = function (){
-				console.log("hi "+xhttp.responseText);
+				alert("You tried to retrieve "+xhttp.response);
 			};
 			xhttp.send();
+					
 	}
 	function createNewLevel(){
 		alert ("Testing");
