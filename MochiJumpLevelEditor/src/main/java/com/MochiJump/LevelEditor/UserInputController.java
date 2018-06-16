@@ -34,8 +34,8 @@ public class UserInputController {
 	}
 	
 	@GetMapping(path="/return")
-	public @ResponseBody String getLevel (@RequestParam String name) {
-		return name;
+	public @ResponseBody Iterable <UserInput> getLevel (@RequestParam String name) {
+		return UserInputRepo.findByLevelName(name);
 	}
 	
 	@PostMapping(path="/json")	
