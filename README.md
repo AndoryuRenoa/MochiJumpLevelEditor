@@ -8,7 +8,7 @@ Spring (Java) built application to host the webpage and transfer data to and fro
 
 The backend is communicating effectively with the client and the MySQL server both ways.
 
-*Currently attempting to load this project to an instance on google cloud. Need to create a runnable jar to deploy on the virtual machine*
+*Launching on virtual machine is causing issues. I can launch a version without the database interface, once it is included everything returns 404*
 
 The last step is to tie it to the MochiJump app
 
