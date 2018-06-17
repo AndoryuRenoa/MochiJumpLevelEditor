@@ -17,6 +17,8 @@ Test whether removing jackson api specific code will work and if it can be repla
 
 New js required for iphone touch control, seems all input counts as x,y position 0.
 
+Look into correcting the offset caused by the header, margins, and position of user's window when creating objects (only visible when retrieving objects)
+
 Decide whether or not MochiJump app will use this app as a controller for importing levels or if it will talk to MySQL server directly
 
 Note to Future Me:
