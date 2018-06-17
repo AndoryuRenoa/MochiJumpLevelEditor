@@ -2,28 +2,22 @@
 
 Current Status:
 
-Single HTML/JS Page with working "paint" like program
+Currently hosted via google cloud - Spring App runnable JAR @ mochijump.com (currently the landing page)
 
-Spring (Java) built application to host the webpage and transfer data to and from MySQL:
-
-The backend is communicating effectively with the client and the MySQL server both ways.
-
-*Launching on virtual machine is causing issues. I can launch a version without the database interface, once it is included everything returns 404*
+Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue.
 
 The last step is to tie it to the MochiJump app
 
 To Do:
 
-Rewrite the JS for the clientside levelEditor so that the corresponding buttons have meaning:
-
-	Start with Import Level button (test with TestTheTable)
+Fix buttons with correct JS functions attached (current get attributes saves the level).
 
 Test whether removing jackson api specific code will work and if it can be replaced with:
 	public @ResponseBody void RecieverTest(@RequestBody UserInput i)
 
-Decide whether or not MochiJump app will use this app as a controller for importing levels or if it will talk to MySQL server directly
+New js required for iphone touch control, seems all input counts as x,y position 0.
 
-Looking at cloud hosting this project in the future, a NoSQL Database connection may be required to keep cost down.
+Decide whether or not MochiJump app will use this app as a controller for importing levels or if it will talk to MySQL server directly
 
 Note to Future Me:
 
