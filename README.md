@@ -4,7 +4,7 @@ Current Status:
 
 Currently hosted via google cloud - Spring App runnable JAR @ mochijump.com (currently the landing page)
 
-Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue.
+Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue. (Possible solution - POM.XLM ? GroupID?)
 
 The last step is to tie it to the MochiJump app
 
