@@ -2,7 +2,7 @@
 
 Current Status:
 
-Currently hosted via google cloud - Spring App runnable JAR @ mochijump.com (currently the landing page)
+Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page)
 
 Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue. (Possible solution - POM.XLM ? GroupID?)
 
