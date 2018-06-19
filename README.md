@@ -2,13 +2,13 @@
 
 Current Status:
 
-Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page)
+Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page is the level editor)
 
 Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue. (Possible solution - POM.XLM ? GroupID?)
 
 Currently Running MochiJumpLevelEditor2 - Fix buttons with correct JS functions attached (current get attributes saves the level).
 
-for some reason changing .ddl-auto=none causes issues on the production server
+for some reason changing .ddl-auto=none causes issues on the production server if this is not resolved a restart of the app will cause all saved data to be lost
 
 The last step is to tie it to the MochiJump app
 
