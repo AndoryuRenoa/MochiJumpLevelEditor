@@ -6,15 +6,13 @@ Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.c
 
 Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue. (Possible solution - POM.XLM ? GroupID?)
 
-Currently Running MochiJumpLevelEditor2
+Currently Running MochiJumpLevelEditor2 - Fix buttons with correct JS functions attached (current get attributes saves the level).
 
 for some reason changing .ddl-auto=none causes issues on the production server
 
 The last step is to tie it to the MochiJump app
 
 To Do:
-
-Fix buttons with correct JS functions attached (current get attributes saves the level).
 
 Test whether removing jackson api specific code will work and if it can be replaced with:
 	public @ResponseBody void RecieverTest(@RequestBody UserInput i)
