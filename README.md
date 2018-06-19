@@ -8,7 +8,7 @@ Build held in this repository causes 404 return error. Rebuilt version works fin
 
 Currently Running MochiJumpLevelEditor2 - Fix buttons with correct JS functions attached (current get attributes saves the level).
 
-for some reason changing .ddl-auto=none causes issues on the production server if this is not resolved a restart of the app will cause all saved data to be lost
+Data loss problem solved (.ddl-auto).
 
 The last step is to tie it to the MochiJump app
 
