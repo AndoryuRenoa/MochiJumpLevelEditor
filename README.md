@@ -6,7 +6,7 @@ Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.c
 
 Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue. (Possible solution - POM.XLM ? GroupID?)
 
-Currently Running MochiJumpLevelEditor2 - Fix buttons with correct JS functions attached (current get attributes saves the level).
+Currently Running MochiJumpLevelEditor2
 
 Data loss problem solved (.ddl-auto).
 
