@@ -22,7 +22,7 @@ div.sizePicker{
 		<p> Enter your level's name:</P>
 		<input type ="text" id= "levelName" name="levelName" value = "keep a record of this name"><br>
 		<button onclick ="callLevel()">Import Level</button>
-		<button onclick ="createNewLevel()">Create New Level</button><br>
+		<button onclick ="saveLevel()">Save Level</button><br>
 		<p> Choose the platform brush size:</p>
 		<input type="radio" onclick ="brushS()" name="radioButton" checked> small<br>
 		<input type="radio" onclick ="brushM()"name="radioButton"> medium<br>
@@ -32,10 +32,7 @@ div.sizePicker{
 <div class ="words">
 <p id = "demoOutput">Cords go here</p><br>
 <button onclick="clearAll()">Clear All</button>
-<button onclick="getCoords()">Get Attributes</button>
 <button onclick="delLastAdded()">Undo Last </button>
-<button onclick="submitLevel()">Save Changes </button>
-	<button onclick="tester()">Initialize Tester</button>
 </div>
 </body>
 <script>
@@ -122,7 +119,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			svg.removeChild(svg.firstChild);
 		}
 	}
-	function getCoords(){
+	function saveLevel(){
 			allRects = svg.getElementsByTagName("*");
 			var levelName = document.getElementById("levelName").value;
 			var startX= [];
