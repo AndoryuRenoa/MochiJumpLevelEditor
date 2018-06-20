@@ -27,6 +27,8 @@ Look into correcting the offset caused by the header, margins, and position of u
 
 Decide whether or not MochiJump app will use this app as a controller for importing levels or if it will talk to MySQL server directly
 
+https://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html
+
 Note to Future Me:
 
 If this turns into something other than a single page app use Thymeleaf.
