@@ -25,7 +25,7 @@ row (levelName) duplicate check and override needs to be built
 
 Look into correcting the offset caused by the header, margins, and position of user's window when creating objects (only visible when retrieving objects)
 
-Decide whether or not MochiJump app will use this app as a controller for importing levels or if it will talk to MySQL server directly
+I'm going to use this as the backend for the main app as well. Further reading:
 
 https://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html
 
