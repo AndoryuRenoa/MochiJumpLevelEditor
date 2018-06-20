@@ -19,6 +19,8 @@ Test whether removing jackson api specific code will work and if it can be repla
 
 New js required for iphone touch control, seems all input counts as x,y position 0.
 
+Take the time to break apart js/css/html once testing is complete
+
 	https://stackoverflow.com/questions/24693447/svg-getintersectionlist-returns-null?noredirect=1&lq=1
 
 row (levelName) duplicate check and override needs to be built
