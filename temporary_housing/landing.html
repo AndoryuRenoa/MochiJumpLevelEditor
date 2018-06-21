@@ -12,12 +12,21 @@ body {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
-.option1{
+.container1{
   position: fixed;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+.option1{
+    display: inline-block;
+    float: center;
+}
+.selector1{
+    display: inline-block;
+    float: left;
 }
 
 </style>
@@ -27,8 +36,15 @@ body {
 	<img id ="blink" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/background.png" ></img>
 </div>
 
-<div class="option1" id="option1">
-	<img id ="blink" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/lvledit.png" ></img>
+<div class ="container1">
+<!-- vertical-align doesn't work -->
+	<div class="option1" id="option1">
+		<img id ="blink" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/lvledit.png" ></img>
+	</div>
+	<div class="selector1" id="selector1">
+		<img id ="blink" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" ></img>
+	</div>
+</div>
 
 </body>
 </html>
