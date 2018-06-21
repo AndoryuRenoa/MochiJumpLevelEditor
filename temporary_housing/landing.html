@@ -1,45 +1,34 @@
+<!DOCTYPE html>
 <html>
-
-  <!-- Trying to create the same layout as the Start/Pause screen in Mochi Jump -->
-  
+<head>
 <style>
-
-	<!-- okay I'm thinking i'll use divs to partition the screen and then float for the selector --> 
-body{
-
-	background-color: LightGray;
+body {
+    background-color: lightgray;
+}
+.mochiIcon{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.option1{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-div.mochiIcon{
-	height: 20%;
-	margin-left: auto;
-   	margin-right: auto;
-	display: block;
-}
-div.choice1{
-	float: center;
-}
-div.selectorPosition1{
-	position: relative	
-	width: 10%;
-	vertical-align: top;
-	display: inline-block;
 </style>
+</head>
 <body>
-<div class= "charmPoint">
-	<div class ="mochiIcon" id="mochiIcon">
-	</div>
+<div class ="mochiIcon" id="mochiIcon">
+	<img id ="blink" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/background.png" ></img>
 </div>
+
+<div class="option1" id="option1">
+	<img id ="blink" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/lvledit.png" ></img>
+
 </body>
-<script>
-
-
-</script>
 </html>
