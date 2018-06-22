@@ -4,20 +4,18 @@ Current Status:
 
 Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page is the level editor)
 
-Build held in this repository causes 404 return error. Rebuilt version works fine. Will take the time to see what is different between the two builds to determine the issue. (Possible solution - POM.XLM ? GroupID?)
-
 Currently Running MochiJumpLevelEditor2
 
-Data loss problem solved (.ddl-auto).
-
-The last step is to tie it to the MochiJump app
-
 To Do:
+
+create pathing for landing.html
+
+tie it to the MochiJump app
 
 Test whether removing jackson api specific code will work and if it can be replaced with:
 	public @ResponseBody void RecieverTest(@RequestBody UserInput i)
 
-New js required for iphone touch control, seems all input counts as x,y position 0.
+New js required for iphone touch control, seems all input counts as x,y position null.
 
 Take the time to break apart js/css/html once testing is complete
 
