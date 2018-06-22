@@ -42,7 +42,7 @@
 	<div class ="container1">
 	<!-- vertical-align doesn't work -->
 		<div class="selector1" id="selector1">
-			<img class= "selector" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" ></img>
+			<img class= "selector" id="selector1img" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
 		</div>
 		<div class="option1" id="option1">
 			<img  src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/lvledit.png" style="float: right;"></img>
@@ -52,4 +52,36 @@
 	</div>
 
 	</body>
+	<script>
+	counter = 0;
+	document.getElementById("option1").addEventListener("mouseenter", opt1Show);
+	document.getElementById("option1").addEventListener("mouseleave", opt1Hide);
+	id = setInterval (optAni, 150);
+	function optAni(){
+			if (counter == 5){
+				clearInterval(id);
+			}
+			else if (counter == 0){
+				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
+				counter++;
+			}
+			else if (counter == 1){
+				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
+				counter++;
+			}else if (counter == 2){
+				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+				counter++;
+			}else if (counter == 3){
+				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+				counter =0;
+			}
+		}
+	function opt1Show(){
+	document.getElementById("selector1img").style.visibility="visible";
+	}	
+	function opt1Hide(){
+	document.getElementById("selector1img").style.visibility="hidden";	
+	}
+
+	</script>
 	</html>
