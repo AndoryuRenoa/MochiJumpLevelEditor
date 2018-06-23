@@ -16,8 +16,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mochijump.leveleditor.Level;
 import com.mochijump.leveleditor.LevelRepository;
 
-@Controller    // This means that this class is a Controller
-@RequestMapping(path="/test") // This means URL's start with /demo (after Application path)
+@Controller    
+@RequestMapping(path="/test") 
 public class MainController {
 	ObjectMapper mapper = new ObjectMapper();
 	
