@@ -1,10 +1,10 @@
 # MochiJumpLevelEditor
 
-*IDE Causing Issues, will need to fix before I'll be able to make any lasting changes*
-
 Current Status:
 
 Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page is the level editor)
+
+Added landing page. Not compiled
 
 Currently Running MochiJumpLevelEditor2
 
