@@ -4,13 +4,11 @@ Current Status:
 
 Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page is the level editor)
 
-Added landing page. Not compiled
+Added landing page
 
 Currently Running MochiJumpLevelEditor2
 
 To Do:
-
-create pathing for landing.html
 
 tie it to the MochiJump app
 
