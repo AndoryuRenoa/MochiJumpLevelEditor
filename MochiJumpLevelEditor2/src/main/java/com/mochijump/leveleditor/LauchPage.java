@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LauchPage {
 	@RequestMapping("/")
 	public String index() {
-		return"draw.html";
+		return"landing.html";
 	}
 
 }

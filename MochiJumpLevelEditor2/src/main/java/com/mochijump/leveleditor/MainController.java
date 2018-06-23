@@ -21,8 +21,14 @@ import com.mochijump.leveleditor.LevelRepository;
 public class MainController {
 	ObjectMapper mapper = new ObjectMapper();
 	
+	
 	@Autowired
 	private LevelRepository uRepository;
+	
+	@RequestMapping("")
+	public String drawPageLaunch() {
+		return"draw.html";
+	}
 	
 	@GetMapping(path="/returnAll")
 	public @ResponseBody Iterable <Level> getAllUserInputs(){
