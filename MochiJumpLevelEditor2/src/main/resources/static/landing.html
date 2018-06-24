@@ -25,11 +25,31 @@
 	.option1{
 
 	}
-	.selector{
+	.selectorimg1{
 	float: right;
 
 	}
 	.selector1, .right1{
+	  flex: 1;
+	}
+
+	.container2{
+		position: fixed;
+		margin-top: 15%;
+	  width: 100%;
+	  top: 50%;
+	  display: inline-flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
+	.option2{
+
+	}
+	.selectorimg2{
+	float: right;
+
+	}
+	.selector2, .right2{
 	  flex: 1;
 	}
 
@@ -43,7 +63,7 @@
 	<div class ="container1">
 	<!-- vertical-align doesn't work -->
 		<div class="selector1" id="selector1">
-			<img class= "selector" id="selector1img" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
+			<img class= "selectorimg1" id="selectorimg1" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
 		</div>
 		<div class="option1" id="option1">
 			<a href ="/test">
@@ -53,37 +73,65 @@
 		<div class = "right1"> </div>
 
 	</div>
+	
+		<div class ="container2">
+	<!-- vertical-align doesn't work -->
+		<div class="selector2" id="selector2">
+			<img class= "selectorimg2" id="selectorimg2" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
+		</div>
+		<div class="option2" id="option2">
+			<a href ="/about">
+			<img  src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/about.png" style="float: right;"></img>
+			</a>
+		</div>
+		<div class = "right2"> </div>
+
+	</div>
 
 	</body>
 	<script>
 	counter = 0;
 	document.getElementById("option1").addEventListener("mouseenter", opt1Show);
 	document.getElementById("option1").addEventListener("mouseleave", opt1Hide);
+	document.getElementById("option2").addEventListener("mouseenter", opt2Show);
+	document.getElementById("option2").addEventListener("mouseleave", opt2Hide);
 	id = setInterval (optAni, 150);
 	function optAni(){
 			if (counter == 5){
 				clearInterval(id);
 			}
 			else if (counter == 0){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
 				counter++;
 			}
 			else if (counter == 1){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
 				counter++;
 			}else if (counter == 2){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+
 				counter++;
 			}else if (counter == 3){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+
 				counter =0;
 			}
 		}
 	function opt1Show(){
-	document.getElementById("selector1img").style.visibility="visible";
+	document.getElementById("selectorimg1").style.visibility="visible";
 	}	
 	function opt1Hide(){
-	document.getElementById("selector1img").style.visibility="hidden";	
+	document.getElementById("selectorimg1").style.visibility="hidden";	
+	}
+	function opt2Show(){
+	document.getElementById("selectorimg2").style.visibility="visible";
+	}	
+	function opt2Hide(){
+	document.getElementById("selectorimg2").style.visibility="hidden";	
 	}
 
 	</script>
