@@ -2,7 +2,7 @@
 
 Current Status:
 
-Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/ (currently the landing page is the level editor)
+Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/
 
 Added landing page
 
