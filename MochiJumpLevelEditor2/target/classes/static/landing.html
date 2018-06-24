@@ -5,6 +5,24 @@
 	body {
 		background-color: lightgray;
 	}
+	
+	.modal {
+    visibility:hidden;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10px; /* Location of the box */
+    left: 25%;
+    top: 5%;
+    width: 50%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+	border-radius: 25px;
+    border: 2px solid #5c6a82;
+    background-color: rgb(130, 146, 173); /* Fallback color */
+    background-color: rgb(130, 146, 173,1); /* Black w/ opacity */
+	}
+	.aboutButton{
+	display: flex; justify-content: center
+	}
 
 	.mochiIcon{
 	  position: fixed;
@@ -25,7 +43,7 @@
 	.option1{
 
 	}
-	.selector{
+	.selectorimg1{
 	float: right;
 
 	}
@@ -33,9 +51,43 @@
 	  flex: 1;
 	}
 
+	.container2{
+		position: fixed;
+		margin-top: 15%;
+	  width: 100%;
+	  top: 50%;
+	  display: inline-flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
+	.option2{
+
+	}
+	.selectorimg2{
+	float: right;
+
+	}
+	.selector2, .right2{
+	  flex: 1;
+	}
+
 	</style>
 	</head>
 	<body>
+	<div class = "modal" id ="modal">
+	<p>This project is still a work in progress</p>
+	<p> MochiJump is a personal project designed by Andrew Lenoir.</P>
+	<p> It is broken into two projects </p>
+	<p></p>
+	<p> MochiJump is a stand alone desktop app that functions as a 2D 8 bit style platformer game. It is written entirely in Java</p>
+	<p></p>
+	<p> MochiJumpLevelEditor is the project that power's this website. Proceeding to "lvl edit" will allow you to retrieve levels or paint your own</p> 
+	<p>The backend is written in Java and uses the Spring Framework along with a MySQL server. <p>
+	It is hosted on gCloud using the Compute Engine running an f1-micro machine instance with an Ubuntu OS.</p>
+		<div class ="aboutButton">
+		<button id="hideAbout" style= > Close </button>
+		</div>
+	</div>
 	<div class ="mochiIcon" id="mochiIcon">
 		<img class="icon" src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/background.png" ></img>
 	</div>
@@ -43,7 +95,7 @@
 	<div class ="container1">
 	<!-- vertical-align doesn't work -->
 		<div class="selector1" id="selector1">
-			<img class= "selector" id="selector1img" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
+			<img class= "selectorimg1" id="selectorimg1" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
 		</div>
 		<div class="option1" id="option1">
 			<a href ="/test">
@@ -53,37 +105,72 @@
 		<div class = "right1"> </div>
 
 	</div>
+	
+		<div class ="container2">
+	<!-- vertical-align doesn't work -->
+		<div class="selector2" id="selector2">
+			<img class= "selectorimg2" id="selectorimg2" src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png" style ="visibility: hidden"></img>
+		</div>
+		<div class="option2" id="option2">
+			<img  src = "https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/about.png" style="float: right;"></img>
+		</div>
+		<div class = "right2"> </div>
+
+	</div>
 
 	</body>
 	<script>
 	counter = 0;
 	document.getElementById("option1").addEventListener("mouseenter", opt1Show);
 	document.getElementById("option1").addEventListener("mouseleave", opt1Hide);
+	document.getElementById("option2").addEventListener("mouseenter", opt2Show);
+	document.getElementById("option2").addEventListener("mouseleave", opt2Hide);
+	document.getElementById("option2").addEventListener("click", showAbout);
+	document.getElementById("hideAbout").addEventListener("click",hideAbout);
 	id = setInterval (optAni, 150);
 	function optAni(){
+	
 			if (counter == 5){
 				clearInterval(id);
 			}
 			else if (counter == 0){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
 				counter++;
 			}
 			else if (counter == 1){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
 				counter++;
 			}else if (counter == 2){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+
 				counter++;
 			}else if (counter == 3){
-				document.getElementById("selector1img").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+
 				counter =0;
 			}
 		}
 	function opt1Show(){
-	document.getElementById("selector1img").style.visibility="visible";
+	document.getElementById("selectorimg1").style.visibility="visible";
 	}	
 	function opt1Hide(){
-	document.getElementById("selector1img").style.visibility="hidden";	
+	document.getElementById("selectorimg1").style.visibility="hidden";	
+	}
+	function opt2Show(){
+	document.getElementById("selectorimg2").style.visibility="visible";
+	}	
+	function opt2Hide(){
+	document.getElementById("selectorimg2").style.visibility="hidden";	
+	}
+	function showAbout(){
+		document.getElementById("modal").style.visibility="visible";
+	}
+	function hideAbout(){
+		document.getElementById("modal").style.visibility="hidden	";
 	}
 
 	</script>

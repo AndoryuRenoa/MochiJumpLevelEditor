@@ -2,8 +2,6 @@
 
 Current Status:
 
-*There are currently changes made in this repository that are not live*
-
 Currently hosted via google cloud - Spring App runnable JAR @ http://mochijump.com/
 
 Added landing page
