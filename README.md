@@ -37,3 +37,5 @@ https://www.twilio.com/docs/voice/tutorials/click-to-call-java-spring
 Note to Future Me:
 
 https://projects.spring.io/spring-security-oauth/docs/oauth2.html
+
+http://www.baeldung.com/sso-spring-security-oauth2
