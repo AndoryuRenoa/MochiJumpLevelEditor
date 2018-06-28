@@ -36,4 +36,4 @@ https://www.twilio.com/docs/voice/tutorials/click-to-call-java-spring
 
 Note to Future Me:
 
-If this turns into something other than a single page app use Thymeleaf.
+https://projects.spring.io/spring-security-oauth/docs/oauth2.html
