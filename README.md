@@ -10,11 +10,11 @@ Currently Running MochiJumpLevelEditor2
 
 To Do:
 
+tie it to the MochiJump app *Currently in progress*
+
 *I'd like to experiment with WebRTC here in the future, seems like a useful API to know*
 
 	http://builds.kurento.org/release/stable/docs/tutorials/java/tutorial-4-one2one.html
-
-tie it to the MochiJump app
 
 Test whether removing jackson api specific code will work and if it can be replaced with:
 	public @ResponseBody void RecieverTest(@RequestBody UserInput i)
