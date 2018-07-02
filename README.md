@@ -27,15 +27,8 @@ Take the time to break apart js/css/html once testing is complete
 
 row (levelName) duplicate check and override needs to be built
 
-Look into correcting the offset caused by the header, margins, and position of user's window when creating objects (only visible when retrieving objects)
-
-I'm going to use this as the backend for the main app as well. Further reading:
-
-https://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html
-https://www.twilio.com/docs/voice/tutorials/click-to-call-java-spring
+Look into correcting the offset caused by the header, margins, and position of user's window when creating objects (only visible when retrieving objects) -- I think this is caued by objects having an x and y value of .5 occassionally, when they're retrieve everything is rounded up
 
 Note to Future Me:
 
 https://projects.spring.io/spring-security-oauth/docs/oauth2.html
-
-http://www.baeldung.com/sso-spring-security-oauth2
