@@ -12,6 +12,8 @@ To Do:
 
 tie it to the MochiJump app *Currently in progress*
 
+script port forwarding and server startup on instance startup
+
 *I'd like to experiment with WebRTC here in the future, seems like a useful API to know*
 
 	http://builds.kurento.org/release/stable/docs/tutorials/java/tutorial-4-one2one.html
