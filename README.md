@@ -10,6 +10,10 @@ Currently Running MochiJumpLevelEditor2
 
 To Do:
 
+Add MochiJump download option
+
+Add login/security
+
 https://spring.io/guides/gs/securing-web/
 
 https://medium.com/@gustavo.ponce.ch/spring-boot-spring-mvc-spring-security-mysql-a5d8545d837d
