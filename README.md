@@ -18,6 +18,8 @@ https://developers.google.com/identity/
 
 http://automateddeveloper.blogspot.com/2014/03/securing-your-mobile-api-spring-security.html
 
+https://docs.spring.io/spring-security/site/docs/3.0.x/reference/remember-me.html
+
 script port forwarding and server startup on instance startup
 
 *I'd like to experiment with WebRTC here in the future, seems like a useful API to know*
