@@ -26,6 +26,10 @@ https://docs.spring.io/spring-security/site/docs/3.0.x/reference/remember-me.htm
 
 script port forwarding and server startup on instance startup
 
+http://jasonleveille.com/blog/2013/01/debian-ubuntu-adding-a-startup-script/
+
+https://stackoverflow.com/questions/22712080/how-to-run-java-application-on-startup-of-ubuntu-linux
+
 *I'd like to experiment with WebRTC here in the future, seems like a useful API to know*
 
 	http://builds.kurento.org/release/stable/docs/tutorials/java/tutorial-4-one2one.html
