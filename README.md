@@ -30,6 +30,8 @@ http://jasonleveille.com/blog/2013/01/debian-ubuntu-adding-a-startup-script/
 
 https://stackoverflow.com/questions/22712080/how-to-run-java-application-on-startup-of-ubuntu-linux
 
+http://www.jcgonzalez.com/linux-java-service-wrapper-example
+
 *I'd like to experiment with WebRTC here in the future, seems like a useful API to know*
 
 	http://builds.kurento.org/release/stable/docs/tutorials/java/tutorial-4-one2one.html
