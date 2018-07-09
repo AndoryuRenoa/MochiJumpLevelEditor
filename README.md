@@ -16,6 +16,8 @@ https://medium.com/@gustavo.ponce.ch/spring-boot-spring-mvc-spring-security-mysq
 
 https://developers.google.com/identity/
 
+http://automateddeveloper.blogspot.com/2014/03/securing-your-mobile-api-spring-security.html
+
 script port forwarding and server startup on instance startup
 
 *I'd like to experiment with WebRTC here in the future, seems like a useful API to know*
