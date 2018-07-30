@@ -12,6 +12,8 @@ To Do:
 
 Add MochiJump download option
 
+The MochiJump app now has NPCs, add option to choose starting point for Mochi as well as option to add NPCs in level editor
+
 Add login/security
 
 https://spring.io/guides/gs/securing-web/
