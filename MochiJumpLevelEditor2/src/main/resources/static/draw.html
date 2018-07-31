@@ -5,7 +5,6 @@ div.paintbox{
 	width: 80%;
 	height: 80%;
 	display: inline-block;
-	background-color : rgb(182, 197, 219);
 }
 div.words{
 	float: left;
@@ -24,12 +23,10 @@ div.sizePicker{
 		<input type ="text" id= "levelName" name="levelName" value = "keep a record of this name"><br>
 		<button onclick ="callLevel()">Import Level</button>
 		<button onclick ="saveLevel()">Save Level</button><br>
-		<p> Choose brush type:</p>
-		<input type= "radio" onclick ="mochiStart()" name="radioButton"> Mochi's Start Location <br>
-		<input type="radio" onclick ="brushS()" name="radioButton" checked> Small Platform Brush<br>
-		<input type="radio" onclick ="brushM()"name="radioButton"> Medium Platform Brush<br>
-		<input type="radio" onclick ="brushL()"name="radioButton"> Large Platform Brush<br>
-		<input type="radio" onclick ="hairClipNPC()" name="radioButton"> HairClipNPC
+		<p> Choose the platform brush size:</p>
+		<input type="radio" onclick ="brushS()" name="radioButton" checked> small<br>
+		<input type="radio" onclick ="brushM()"name="radioButton"> medium<br>
+		<input type="radio" onclick ="brushL()"name="radioButton"> Large
 	</div>
 </div>
 <div class ="words">
@@ -60,7 +57,6 @@ div.sizePicker{
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
-    var npc = document.createElementNS
     var x;
     var y;
     var mouseDown;
@@ -68,9 +64,6 @@ div.sizePicker{
     var xmlns = "http://www.w3.org/2000/svg";
     var brushSize = 5;
     var allRects;
-    var allHCNPCs;
-    var objectType = "rect";
-	var newMochi = document.createElementNS('http://www.w3.org/2000/svg', 'image')
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
 document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
@@ -86,38 +79,15 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
       }
      }
 	function makeNewBox(){
-		
-		if (objectType=="rect"){
-	        var newRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    	    newRect.setAttribute("x", (x*2-brushSize)/2);
-        	newRect.setAttribute("y", (y*2-brushSize)/2);
-        	newRect.setAttribute ("width", brushSize);
-        	newRect.setAttribute ("height", brushSize);
-        	newRect.setAttribute("fill", "#82571b");
-        	newRect.setAttribute("class", "rect");
-        	svg.appendChild(newRect);
-        	document.getElementById("paintBox").appendChild(svg);
-		}
-		if (objectType=="hairClipNPC"){
-			var newHCNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image')
-			newHCNPC.setAttribute("x", x);
-			newHCNPC.setAttribute("y", y);
-			newHCNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/Resources/hClipL1.png?raw=true');
-        	newHCNPC.setAttribute("class", "hairClipNPC");
-			svg.appendChild(newHCNPC);
-        	document.getElementById("paintBox").appendChild(svg);
-			}
-		if (objectType =="mochi"){
-			
-				newMochi.setAttribute("x", x);
-				newMochi.setAttribute("y", y);
-				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
-        		newMochi.setAttribute("class", "mochi");
-				svg.appendChild(newMochi);
-        		document.getElementById("paintBox").appendChild(svg);
-        		
-			}
-		
+        var newRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        newRect.setAttribute("x", (x*2-brushSize)/2);
+        newRect.setAttribute("y", (y*2-brushSize)/2);
+        newRect.setAttribute ("width", brushSize);
+        newRect.setAttribute ("height", brushSize);
+        newRect.setAttribute("fill", "#82571b");
+		//^^ same color as in mochiJump currently
+        svg.appendChild(newRect);
+        document.getElementById("paintBox").appendChild(svg);
 	}
 	function cordsFunction(e){
 		x = e.clientX -pBRects.left-5;
@@ -137,21 +107,12 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 	function brushS(){
 		brushSize = 5;
-		objectType = "rect";
 	}
 	function brushM(){
 		brushSize = 50;
-		objectType = "rect";
 	}
 	function brushL(){
 		brushSize = 150;
-		objectType = "rect";
-	}
-	function hairClipNPC(){
-		objectType = "hairClipNPC";
-	}
-	function mochiStart(){
-		objectType = "mochi";
 	}
 	function clearAll(){
 		while (svg.firstChild){
@@ -159,34 +120,21 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		}
 	}
 	function saveLevel(){
-			allRects = svg.getElementsByClassName("rect");
+			allRects = svg.getElementsByTagName("*");
 			var levelName = document.getElementById("levelName").value;
 			var startX= [];
 			var startY =[];
 			var height =[];
 			var width = [];
-			function fillRectArray (){
+			function fillArray (){
 				for (var i=0; i<allRects.length; i++){
-					startX [i] = Math.round(allRects[i].getBoundingClientRect().x), 
-					startY [i] = Math.round(allRects[i].getBoundingClientRect().y), 
-					height [i] = Math.round(allRects[i].getBoundingClientRect().height), 
-					width [i] = Math.round(allRects[i].getBoundingClientRect().width)}	
+			startX [i] = Math.round(allRects[i].getBoundingClientRect().x), 
+			startY [i] = Math.round(allRects[i].getBoundingClientRect().y), 
+			height [i] = Math.round(allRects[i].getBoundingClientRect().height), 
+			 width [i] = Math.round(allRects[i].getBoundingClientRect().width)}	
 				}
-			allHCNPCs = svg.getElementsByClassName("hairClipNPC");
-			var hairClipStartX =[];
-			var hairClipStartY =[];
-			function fillHCNPCArray(){
-				for (var i=0; i<allHCNPCs.length; i++){
-					hairClipStartX[i] = Math.round(allHCNPCs[i].getBoundingClientRect().x),
-					hairClipStartY[i] = Math.round(allHCNPCs[i].getBoundingClientRect().y)}
-			}
-			var mochi = svg.getElementsByClassName("mochi");
-			var mochiStartX = Math.round(mochi[0].getBoundingClientRect().x);
-			var mochiStartY = Math.round(mochi[0].getBoundingClientRect().y);
-			fillRectArray();
-			fillHCNPCArray();
-			var collection = {levelName, startX, startY, width, height,
-					hairClipStartX, hairClipStartY, mochiStartX, mochiStartY};
+			fillArray();
+			var collection = {levelName, startX, startY, width, height};
 			var xhttp = new XMLHttpRequest();
 			var rectsJson = JSON.stringify(collection);
 			xhttp.open("POST", "/test/json")
@@ -218,8 +166,6 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 				var startY = response[0].startY;
 				var width = response[0].width;
 				var height = response[0].height;
-				var hairClipStartX = response[0].hairClipStartX;
-				var hairClipStartY = response[0].hairClipStartY;
 				for (var i =0; i<startX.length; i++){
 					
 					//may need a callback here as well, but what to use?
@@ -229,28 +175,11 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			        newRect.setAttribute("y", startY[i]);
 			        newRect.setAttribute ("width", width[i]);
 			        newRect.setAttribute ("height", height[i]);
-			        newRect.setAttribute ("class", "rect");
 			        newRect.setAttribute("fill", "#82571b");
 					//^^ same color as in mochiJump currently
-					newRect.setAttribute("class", "rect");
 			        svg.appendChild(newRect);
 			        document.getElementById("paintBox").appendChild(svg);
 					}
-				for (var i=0; i<hairClipStartX.length; i++){
-					var newHairClipNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-					newHairClipNPC.setAttribute("x", hairClipStartX[i]);
-					newHairClipNPC.setAttribute("y", hairClipStartY[i]);
-					newHairClipNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/Resources/hClipL1.png?raw=true');
-		        	newHairClipNPC.setAttribute("class", "hairClipNPC");
-		        	svg.appendChild(newHairClipNPC);
-			        document.getElementById("paintBox").appendChild(svg);
-				}
-				newMochi.setAttribute("x", response[0].mochiStartX);
-				newMochi.setAttribute("y", response[0].mochiStartY);
-				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
-        		newMochi.setAttribute("class", "mochi");
-				svg.appendChild(newMochi);
-        		document.getElementById("paintBox").appendChild(svg);
 				var recallName =response[0].levelName
 				//callback required
 				alert("You tried to retrieve "+recallName, recallName != null);
