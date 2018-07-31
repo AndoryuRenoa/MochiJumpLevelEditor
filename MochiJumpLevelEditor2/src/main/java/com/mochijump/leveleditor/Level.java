@@ -34,6 +34,18 @@ public class Level {
 	@Lob
 	private ArrayList<Integer> height;
 	
+	@Column(length = 1000000)
+	@Lob
+	private ArrayList<Integer> hairClipStartX;
+	
+	@Column(length = 1000000)
+	@Lob
+	private ArrayList<Integer> hairClipStartY;
+	
+	private int mochiStartX;
+	
+	private int mochiStartY;
+	
 
 	public Integer getId () {
 		return id;
@@ -90,5 +102,35 @@ public class Level {
 		this.height = height;
 	}
 	
+	public ArrayList<Integer> getHairClipStartX(){
+		return hairClipStartX;
+	}
+	
+	public void setHairClipStartX(ArrayList<Integer> hairClipStartX) {
+		this.hairClipStartX = hairClipStartX;
+	}
+	
+	public ArrayList<Integer> getHairClipStartY(){
+		return hairClipStartY;
+	}
+	
+	public void setHairClipStartY(ArrayList<Integer> hairClipStartY) {
+		this.hairClipStartY = hairClipStartY;
+	}
+	
+	public int getMochiStartX() {
+		return mochiStartX;
+	}
+	
+	public void setMochiStartX (int mochiStartX) {
+		this.mochiStartX = mochiStartX;
+	}
+	
+	public int getMochiStartY() {
+		return mochiStartY;
+	}
+	public void setMochiStartY(int mochiStartY) {
+		this.mochiStartY = mochiStartY;
+	}
 	
 }
