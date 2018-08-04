@@ -39,23 +39,6 @@ div.sizePicker{
 </div>
 </body>
 <script>
-/** Optional additional to Do:
-* Undo button works, but in working with it I realize that 2 of every object is being created, and I do not know why, adding removeChild
-* the end of the creation function keeps it from creating anything, so I'm not sure what exactly is going on here, but the short fix is
-* to duplicate the undo script twice.
-* add mochi start point
-*
-*
-*
-* Current reading: https://www.w3schools.com/js/js_json_intro.asp
-* continued: https://blog.garstasio.com/you-dont-need-jquery/ajax/
-* continued: https://www.kirupa.com/html5/making_http_requests_js.htm
-* continued: https://stackoverflow.com/questions/7071544/post-from-xmlhttp-with-parameters
-*/
-
-/** use (i=0; i<.length;i++) to create output for DB
-* NOTE! Occassionally I get a float value for value for x or y: make sure you cast value to int either in js or php!
-*/
 
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute ("width", "100%");
@@ -70,7 +53,7 @@ div.sizePicker{
     var allRects;
     var allHCNPCs;
     var objectType = "rect";
-	var newMochi = document.createElementNS('http://www.w3.org/2000/svg', 'image')
+	var newMochi = document.createElementNS('http://www.w3.org/2000/svg', 'image');
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
 document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
@@ -181,6 +164,9 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 					hairClipStartY[i] = Math.round(allHCNPCs[i].getBoundingClientRect().y)}
 			}
 			var mochi = svg.getElementsByClassName("mochi");
+			if (mochi[0] == null){
+					alert("Cannot save level without Mochi's start location")
+			}else{
 			var mochiStartX = Math.round(mochi[0].getBoundingClientRect().x);
 			var mochiStartY = Math.round(mochi[0].getBoundingClientRect().y);
 			fillRectArray();
@@ -195,7 +181,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 				alert("Level Saved");	
 				}
 			};
-			xhttp.send(rectsJson);			
+			xhttp.send(rectsJson);
+			}
 	}
 	
 	function delLastAdded(){
@@ -204,7 +191,6 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
 	
 	
-// Currently working on this!
 
 	function callLevel(){
 		alert("Testing");
@@ -222,7 +208,6 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 				var hairClipStartY = response[0].hairClipStartY;
 				for (var i =0; i<startX.length; i++){
 					
-					//may need a callback here as well, but what to use?
 					console.log ("ready", startX.length == height.length );
 					var newRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 			        newRect.setAttribute("x", startX[i]);
@@ -231,8 +216,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			        newRect.setAttribute ("height", height[i]);
 			        newRect.setAttribute ("class", "rect");
 			        newRect.setAttribute("fill", "#82571b");
-					//^^ same color as in mochiJump currently
-					newRect.setAttribute("class", "rect");
+
+			        newRect.setAttribute("class", "rect");
 			        svg.appendChild(newRect);
 			        document.getElementById("paintBox").appendChild(svg);
 					}
@@ -257,19 +242,6 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			};
 			xhttp.send();
 					
-	}
-	function createNewLevel(){
-		alert ("Testing");
-		var xhttp = new XMLHttpRequest();
-		var levelName = document.getElementById("levelName").value;
-		var nameJson = JSON.stringify({"tableName": levelName});
-		xhttp.open("POST", "/test/json")
-		xhttp.onreadystatechange = function(){
-			if (xhttp.readyState == 4 && xhttp.status == 200){
-			console.log ("sent");	
-			}
-		};
-		xhttp.send(nameJson);
 	}
 
 </script>
