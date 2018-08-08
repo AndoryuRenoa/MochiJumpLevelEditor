@@ -47,6 +47,11 @@ public class MainController {
 	public @ResponseBody void recieverTest(@RequestBody String s){
 		try {
 		Level i = mapper.readValue(s, Level.class);
+		// not implemented in live app yet:
+		// Level exists = uRepository.findByLevelName(i.getLevelName());
+		// if (exists != null){
+			// i.setId(exists.getId());
+			//}
 		uRepository.save(i);
 		} catch (JsonMappingException e) {
 		    e.printStackTrace();
