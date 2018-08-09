@@ -57,7 +57,7 @@ public class Level {
 	}
 	
 	
-	public String getlevelName() {
+	public String getLevelName() {
 		return levelName;
 	}
 	

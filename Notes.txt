@@ -1,3 +1,0 @@
-Running MySQL on a windows computer can be frustrating. Remember to check windows firewall after an update
-
-Windows updates can also interfere with STS. Keep the downloaded .zip handy in case you need to replace it

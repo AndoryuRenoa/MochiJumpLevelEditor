@@ -1,76 +1,7 @@
 	<!DOCTYPE html>
 	<html>
 	<head>
-	<style>
-	body {
-		background-color: lightgray;
-	}
-	
-	.modal {
-    visibility:hidden;
-    position: fixed;
-    z-index: 1; 
-    padding-top: 10px; 
-    left: 25%;
-    top: 5%;
-    width: 50%; 
-    overflow: auto; 
-	border-radius: 25px;
-    border: 2px solid #5c6a82;
-    background-color: rgb(130, 146, 173); 
-    background-color: rgb(130, 146, 173,1); 
-	}
-	.aboutButton{
-	display: flex; justify-content: center
-	}
-
-	.mochiIcon{
-	  position: fixed;
-	  top: 20%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	}
-	.container1{	
-		position: fixed;
-		margin-bottom: 10%;
-	  width: 100%;
-	  top: 50%;
-	  display: inline-flex;
-	  flex-direction: row;
-	  align-items: center;
-	}
-	.option1{
-
-	}
-	.selectorimg1{
-	float: right;
-
-	}
-	.selector1, .right1{
-	  flex: 1;
-	}
-
-	.container2{
-		position: fixed;
-		margin-top: 15%;
-	  width: 100%;
-	  top: 50%;
-	  display: inline-flex;
-	  flex-direction: row;
-	  align-items: center;
-	}
-	.option2{
-
-	}
-	.selectorimg2{
-	float: right;
-
-	}
-	.selector2, .right2{
-	  flex: 1;
-	}
-
-	</style>
+	<link rel="stylesheet" href="landing.css">
 	</head>
 	<body>
 	<div class = "modal" id ="modal">
@@ -125,59 +56,5 @@
 	</div>
 
 	</body>
-	<script>
-	counter = 0;
-	document.getElementById("option1").addEventListener("mouseenter", opt1Show);
-	document.getElementById("option1").addEventListener("mouseleave", opt1Hide);
-	document.getElementById("option2").addEventListener("mouseenter", opt2Show);
-	document.getElementById("option2").addEventListener("mouseleave", opt2Hide);
-	document.getElementById("option2").addEventListener("click", showAbout);
-	document.getElementById("hideAbout").addEventListener("click",hideAbout);
-	id = setInterval (optAni, 150);
-	function optAni(){
-	
-			if (counter == 5){
-				clearInterval(id);
-			}
-			else if (counter == 0){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
-				counter++;
-			}
-			else if (counter == 1){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
-				counter++;
-			}else if (counter == 2){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
-
-				counter++;
-			}else if (counter == 3){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
-
-				counter =0;
-			}
-		}
-	function opt1Show(){
-	document.getElementById("selectorimg1").style.visibility="visible";
-	}	
-	function opt1Hide(){
-	document.getElementById("selectorimg1").style.visibility="hidden";	
-	}
-	function opt2Show(){
-	document.getElementById("selectorimg2").style.visibility="visible";
-	}	
-	function opt2Hide(){
-	document.getElementById("selectorimg2").style.visibility="hidden";	
-	}
-	function showAbout(){
-		document.getElementById("modal").style.visibility="visible";
-	}
-	function hideAbout(){
-		document.getElementById("modal").style.visibility="hidden	";
-	}
-
-	</script>
+	<script src = "landing.js"> </script>
 	</html>
