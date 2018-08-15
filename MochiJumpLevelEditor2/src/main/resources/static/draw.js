@@ -11,6 +11,7 @@
     var allRects;
     var allHCNPCs;
     var objectType = "rect";
+    var newgoalNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image')
 	var newMochi = document.createElementNS('http://www.w3.org/2000/svg', 'image');
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
 document.getElementById("paintBox").style.cursor = "crosshair";
@@ -48,6 +49,14 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			svg.appendChild(newHCNPC);
         	document.getElementById("paintBox").appendChild(svg);
 			}
+		if (objectType =="goalNPC"){
+			newgoalNPC.setAttribute('x', x);
+			newgoalNPC.setAttribute('y',y);
+			newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
+			newgoalNPC.setAttribute('class', 'goalNPC')
+			svg.appendChild(newgoalNPC);
+			document.getElementById('paintBox').appendChild(svg);
+		}
 		if (objectType =="mochi"){
 			
 				newMochi.setAttribute("x", x);
@@ -94,6 +103,9 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	function mochiStart(){
 		objectType = "mochi";
 	}
+	function goalNPC(){
+		objectType ="goalNPC";
+	}
 	function clearAll(){
 		while (svg.firstChild){
 			svg.removeChild(svg.firstChild);
@@ -121,26 +133,33 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 					hairClipStartX[i] = Math.round(allHCNPCs[i].getBoundingClientRect().x ),
 					hairClipStartY[i] = Math.round(allHCNPCs[i].getBoundingClientRect().y )}
 			}
-			var mochi = svg.getElementsByClassName("mochi");
-			if (mochi[0] == null){
-					alert("Cannot save level without Mochi's start location")
+			var gNPC = svg.getElementsByClassName("goalNPC");
+			if (gNPC[0] == null){
+					alert("Cannot save level without GoalNPC's location set")
 			}else{
-			var mochiStartX = Math.round(mochi[0].getBoundingClientRect().x);
-			var mochiStartY = Math.round(mochi[0].getBoundingClientRect().y);
-			fillRectArray();
-			fillHCNPCArray();
-			var collection = {levelName, startX, startY, width, height,
-					hairClipStartX, hairClipStartY, mochiStartX, mochiStartY};
-			var xhttp = new XMLHttpRequest();
-			var rectsJson = JSON.stringify(collection);
-			xhttp.open("POST", "/test/json")
-			xhttp.onreadystatechange = function(){
-				if (xhttp.readyState == 4 && xhttp.status == 200){
-				alert("Level Saved");	
+			var goalStartX = Math.round(gNPC[0].getBoundingClientRect().x);
+			var goalStartY = Math.round(gNPC[0].getBoundingClientRect().y);
+			var mochi = svg.getElementsByClassName("mochi");
+				if (mochi[0] == null){
+						alert("Cannot save level without Mochi's start location")
+				}else{
+					var mochiStartX = Math.round(mochi[0].getBoundingClientRect().x);
+					var mochiStartY = Math.round(mochi[0].getBoundingClientRect().y);
+					fillRectArray();
+					fillHCNPCArray();
+					var collection = {levelName, startX, startY, width, height,
+							hairClipStartX, hairClipStartY, goalStartX, goalStartY, mochiStartX, mochiStartY};
+					var xhttp = new XMLHttpRequest();
+					var rectsJson = JSON.stringify(collection);
+					xhttp.open("POST", "/test/json")
+					xhttp.onreadystatechange = function(){
+						if (xhttp.readyState == 4 && xhttp.status == 200){
+							alert("Level Saved");	
+						}
+					};
+					xhttp.send(rectsJson);
 				}
-			};
-			xhttp.send(rectsJson);
-			}
+				}
 	}
 	
 	function delLastAdded(){
@@ -188,6 +207,12 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		        	svg.appendChild(newHairClipNPC);
 			        document.getElementById("paintBox").appendChild(svg);
 				}
+				newgoalNPC.setAttribute("x", response[0].goalStartX-pBRects.left-5);
+				newgoalNPC.setAttribute("y", response[0].goalStartY-pBRects.top-5);
+				newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
+        		newgoalNPC.setAttribute("class", "goalNPC");
+				svg.appendChild(newgoalNPC);
+        		document.getElementById("paintBox").appendChild(svg);
 				newMochi.setAttribute("x", response[0].mochiStartX-pBRects.left-5);
 				newMochi.setAttribute("y", response[0].mochiStartY-pBRects.top-5);
 				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');

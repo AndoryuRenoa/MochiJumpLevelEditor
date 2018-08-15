@@ -42,9 +42,9 @@ public class Level {
 	@Lob
 	private ArrayList<Integer> hairClipStartY;
 	
-	private int goalNPCStartX;
+	private int goalStartX;
 	
-	private int goalNPCStartY;
+	private int goalStartY;
 	
 	private int mochiStartX;
 	
@@ -122,20 +122,20 @@ public class Level {
 		this.hairClipStartY = hairClipStartY;
 	}
 	
-	public int getGoalNPCStartX() {
-		return goalNPCStartX;
+	public int getGoalStartX() {
+		return goalStartX;
 	}
 	
-	public void setGoalNPCStartX(int goalNPCStartX) {
-		this.goalNPCStartX = goalNPCStartX;
+	public void setGoaltartX(int goalStartX) {
+		this.goalStartX = goalStartX;
 	}
 	
-	public int getGoalNPCStartY() {
-		return goalNPCStartY;
+	public int getGoalStartY() {
+		return goalStartY;
 	}
 	
-	public void setGoalNPCStartY(int goalNPCStartY) {
-		this.goalNPCStartY = goalNPCStartY;
+	public void setGoalStartY(int goalStartY) {
+		this.goalStartY = goalStartY;
 	}
 	
 	public int getMochiStartX() {
