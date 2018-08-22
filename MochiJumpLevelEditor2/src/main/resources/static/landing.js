@@ -12,22 +12,22 @@ counter = 0;
 				clearInterval(id);
 			}
 			else if (counter == 0){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone1M.png";
+				document.getElementById("selectorimg1").src ="/images/bone1M.png";
+				document.getElementById("selectorimg2").src ="/images/bone1M.png";
 				counter++;
 			}
 			else if (counter == 1){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone2M.png";
+				document.getElementById("selectorimg1").src ="/images/bone2M.png";
+				document.getElementById("selectorimg2").src ="/images/bone2M.png";
 				counter++;
 			}else if (counter == 2){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone3M.png";
+				document.getElementById("selectorimg1").src ="/images/bone3M.png";
+				document.getElementById("selectorimg2").src ="/images/bone3M.png";
 
 				counter++;
 			}else if (counter == 3){
-				document.getElementById("selectorimg1").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
-				document.getElementById("selectorimg2").src ="https://raw.githubusercontent.com/AndoryuRenoa/MochiJump/master/resources/bone4M.png";
+				document.getElementById("selectorimg1").src ="/images/bone4M.png";
+				document.getElementById("selectorimg2").src ="/images/bone4M.png";
 
 				counter =0;
 			}

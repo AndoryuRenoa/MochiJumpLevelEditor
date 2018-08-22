@@ -44,7 +44,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			var newHCNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image')
 			newHCNPC.setAttribute("x", x);
 			newHCNPC.setAttribute("y", y);
-			newHCNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/Resources/hClipL1.png?raw=true');
+			newHCNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/hClipL1.png');
         	newHCNPC.setAttribute("class", "hairClipNPC");
 			svg.appendChild(newHCNPC);
         	document.getElementById("paintBox").appendChild(svg);
@@ -52,7 +52,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		if (objectType =="goalNPC"){
 			newgoalNPC.setAttribute('x', x);
 			newgoalNPC.setAttribute('y',y);
-			newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
+			newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '/images/mochirs.png');
 			newgoalNPC.setAttribute('class', 'goalNPC')
 			svg.appendChild(newgoalNPC);
 			document.getElementById('paintBox').appendChild(svg);
