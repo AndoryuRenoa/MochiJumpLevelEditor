@@ -61,7 +61,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			
 				newMochi.setAttribute("x", x);
 				newMochi.setAttribute("y", y);
-				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
+				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/mochirs.png');
         		newMochi.setAttribute("class", "mochi");
 				svg.appendChild(newMochi);
         		document.getElementById("paintBox").appendChild(svg);
@@ -202,20 +202,20 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 					var newHairClipNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image');
 					newHairClipNPC.setAttribute("x", hairClipStartX[i]-pBRects.left-5);
 					newHairClipNPC.setAttribute("y", hairClipStartY[i]-pBRects.top-5);
-					newHairClipNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/Resources/hClipL1.png?raw=true');
+					newHairClipNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/hClipL1.png');
 		        	newHairClipNPC.setAttribute("class", "hairClipNPC");
 		        	svg.appendChild(newHairClipNPC);
 			        document.getElementById("paintBox").appendChild(svg);
 				}
 				newgoalNPC.setAttribute("x", response[0].goalStartX-pBRects.left-5);
 				newgoalNPC.setAttribute("y", response[0].goalStartY-pBRects.top-5);
-				newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
+				newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/mochirs.png');
         		newgoalNPC.setAttribute("class", "goalNPC");
 				svg.appendChild(newgoalNPC);
         		document.getElementById("paintBox").appendChild(svg);
 				newMochi.setAttribute("x", response[0].mochiStartX-pBRects.left-5);
 				newMochi.setAttribute("y", response[0].mochiStartY-pBRects.top-5);
-				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','https://github.com/AndoryuRenoa/MochiJump/blob/master/resources/mochirs.png?raw=true');
+				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/mochirs.png');
         		newMochi.setAttribute("class", "mochi");
 				svg.appendChild(newMochi);
         		document.getElementById("paintBox").appendChild(svg);
