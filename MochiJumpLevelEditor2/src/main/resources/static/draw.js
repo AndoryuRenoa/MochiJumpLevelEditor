@@ -52,7 +52,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		if (objectType =="goalNPC"){
 			newgoalNPC.setAttribute('x', x);
 			newgoalNPC.setAttribute('y',y);
-			newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '/images/mochirs.png');
+			newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '/images/ball.png');
 			newgoalNPC.setAttribute('class', 'goalNPC')
 			svg.appendChild(newgoalNPC);
 			document.getElementById('paintBox').appendChild(svg);
@@ -209,7 +209,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 				}
 				newgoalNPC.setAttribute("x", response[0].goalStartX-pBRects.left-5);
 				newgoalNPC.setAttribute("y", response[0].goalStartY-pBRects.top-5);
-				newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/mochirs.png');
+				newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/ball.png');
         		newgoalNPC.setAttribute("class", "goalNPC");
 				svg.appendChild(newgoalNPC);
         		document.getElementById("paintBox").appendChild(svg);
