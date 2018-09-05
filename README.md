@@ -4,7 +4,7 @@ Current Status:
 
 hosted via google cloud @ http://mochijump.com/
 
-Really should do:
+Should do:
 
 Add new download desktop app button on landing page
 
