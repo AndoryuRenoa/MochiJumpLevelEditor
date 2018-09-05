@@ -8,6 +8,8 @@ Really should do:
 
 Add new download desktop app button on landing page
 
+Change alerts & url for level editor
+
 Nice to do:
 
 Add app to email interface
