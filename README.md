@@ -6,6 +6,8 @@ hosted via google cloud @ http://mochijump.com/
 
 Should do:
 
+create getAllLevelNames()
+
 Add new download desktop app button on landing page
 
 Change alerts & url for level editor
