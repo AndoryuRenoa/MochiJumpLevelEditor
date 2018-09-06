@@ -6,7 +6,7 @@ hosted via google cloud @ http://mochijump.com/
 
 Should do:
 
-create getAllLevelNames()
+create getAllLevelNames() // rough draft made
 
 Add new download desktop app button on landing page
 
