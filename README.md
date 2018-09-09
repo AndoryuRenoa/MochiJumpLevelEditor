@@ -6,9 +6,11 @@ hosted via google cloud @ http://mochijump.com/
 
 Should do:
 
-create getAllLevelNames() // rough draft made
+create getAllLevelNames() // Done
 
 Add new download desktop app button on landing page
+
+add arrows to move view point in level editor
 
 Change alerts & url for level editor
 
