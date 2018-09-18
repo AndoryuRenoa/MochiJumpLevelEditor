@@ -11,9 +11,8 @@ import com.mochijump.leveleditor.Level;
 public interface LevelRepository extends CrudRepository<Level, Long> {
 	public List<Level> findByLevelName (String levelName);
 	
-	// In order to get a list of names you'll have to use the @Query annotation
-	// note: HQL wants the Entity name and object name in my code, the below will work:
-	// @Query ("SELECT levelName FROM Level")
-	// public List<?> getLevelNames();
+
+	@Query ("SELECT levelName FROM Level")
+	public List<?> getLevelNames();
 
 }
