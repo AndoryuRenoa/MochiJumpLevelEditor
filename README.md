@@ -4,6 +4,13 @@ Current Status:
 
 hosted via google cloud @ http://mochijump.com/
 
+Current Interest:
+
+I want to convert this project from living on the Compute Engine to the App Engine:
+
+https://codelabs.developers.google.com/codelabs/cloud-app-engine-springboot/index.html?index=..%2F..%2Findex#0
+
+
 Should do:
 
 Add new download desktop app button on landing page
