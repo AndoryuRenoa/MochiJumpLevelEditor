@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity 
 public class Level {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -41,6 +41,14 @@ public class Level {
 	@Column(length = 1000000)
 	@Lob
 	private ArrayList<Integer> hairClipStartY;
+	
+	@Column(length = 1000000)
+	@Lob
+	private ArrayList<Integer> gooseStartX;
+	
+	@Column(length = 1000000)
+	@Lob
+	private ArrayList<Integer> gooseStartY;
 	
 	private int goalStartX;
 	
@@ -120,6 +128,22 @@ public class Level {
 	
 	public void setHairClipStartY(ArrayList<Integer> hairClipStartY) {
 		this.hairClipStartY = hairClipStartY;
+	}
+	
+	public ArrayList<Integer> getGooseStartX(){
+		return gooseStartX;
+	}
+	
+	public void setGooseStartX(ArrayList<Integer> gooseStartX) {
+		this.gooseStartX = gooseStartX;
+	}
+	
+	public ArrayList <Integer> getGooseStartY(){
+		return gooseStartY;
+	}
+	
+	public void setGooseStartY(ArrayList<Integer> gooseStartY) {
+		this.gooseStartY = gooseStartY;
 	}
 	
 	public int getGoalStartX() {

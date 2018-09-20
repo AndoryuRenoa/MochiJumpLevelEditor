@@ -10,9 +10,11 @@
     var brushSize = 5;
     var allRects;
     var allHCNPCs;
+    var allGooseNPCs;
     var objectType = "rect";
     var newgoalNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image')
 	var newMochi = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+    
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
 document.getElementById("paintBox").style.cursor = "crosshair";
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
@@ -49,6 +51,15 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			svg.appendChild(newHCNPC);
         	document.getElementById("paintBox").appendChild(svg);
 			}
+		if (objectType =="gooseNPC"){
+			var newGooseNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+			newGooseNPC.setAttribute("x", x);
+			newGooseNPC.setAttribute("y", y);
+			newGooseNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'images/GooseFlyLeft1.png');
+			newGooseNPC.setAttribute('class', 'gooseNPC');
+			svg.appendChild(newGooseNPC);
+			document.getElementById("paintBox").appendChild(svg);
+		}
 		if (objectType =="goalNPC"){
 			newgoalNPC.setAttribute('x', x);
 			newgoalNPC.setAttribute('y',y);
@@ -100,6 +111,11 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	function hairClipNPC(){
 		objectType = "hairClipNPC";
 	}
+	
+	function gooseNPC(){
+		objectType ="gooseNPC";
+	}
+	
 	function mochiStart(){
 		objectType = "mochi";
 	}
@@ -133,6 +149,17 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 					hairClipStartX[i] = Math.round(allHCNPCs[i].getBoundingClientRect().x ),
 					hairClipStartY[i] = Math.round(allHCNPCs[i].getBoundingClientRect().y )}
 			}
+			
+			allGooseNPCs = svg.getElementsByClassName("gooseNPC");
+			var gooseStartX = [];
+			var gooseStartY = [];
+			function fillGooseNPCArray(){
+				for (var i=0; i<allGooseNPCs.length; i++){
+					gooseStartX[i] = Math.round(allGooseNPCs[i].getBoundingClientRect().x);
+					gooseStartY[i] = Math.round(allGooseNPCs[i].getBoundingClientRect().y);
+				}
+			}
+			
 			var gNPC = svg.getElementsByClassName("goalNPC");
 			if (gNPC[0] == null){
 					alert("Cannot save level without GoalNPC's location set")
@@ -147,8 +174,9 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 					var mochiStartY = Math.round(mochi[0].getBoundingClientRect().y);
 					fillRectArray();
 					fillHCNPCArray();
+					fillGooseNPCArray();
 					var collection = {levelName, startX, startY, width, height,
-							hairClipStartX, hairClipStartY, goalStartX, goalStartY, mochiStartX, mochiStartY};
+							hairClipStartX, hairClipStartY, gooseStartX, gooseStartY, goalStartX, goalStartY, mochiStartX, mochiStartY};
 					var xhttp = new XMLHttpRequest();
 					var rectsJson = JSON.stringify(collection);
 					xhttp.open("POST", "/test/json")
@@ -183,6 +211,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 				var height = response[0].height;
 				var hairClipStartX = response[0].hairClipStartX;
 				var hairClipStartY = response[0].hairClipStartY;
+				var gooseClipStartX = response[0].gooseClipStartX;
+				var gooseClipStartY = response[0].gooseClipStartY;
 				for (var i =0; i<startX.length; i++){
 					
 					console.log ("ready", startX.length == height.length );
@@ -206,6 +236,16 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 		        	newHairClipNPC.setAttribute("class", "hairClipNPC");
 		        	svg.appendChild(newHairClipNPC);
 			        document.getElementById("paintBox").appendChild(svg);
+				}
+				
+				for (var i=0; i< gooseClipStartX.length; i++){
+					var newGooseNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+					newGooseNPC.setAttribute('x', gooseClipStartX[i]-pBRects.left-5);
+					newGooseNPC.setAttribute('y', gooseClipStartY[i]-pBRects.top-5);
+					newGooseNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'images/GooseFlyLeft1.png');
+					newGooseNPC.setAttribute('class', 'gooseNPC');
+					svg.appendChild(newGooseNPC);
+					document.getElementById("paintBox").appendChild(svg);
 				}
 				newgoalNPC.setAttribute("x", response[0].goalStartX-pBRects.left-5);
 				newgoalNPC.setAttribute("y", response[0].goalStartY-pBRects.top-5);
