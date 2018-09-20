@@ -4,8 +4,7 @@ Current Status:
 
 hosted via google cloud @ http://mochijump.com/
 
-*Note: Occasionally service simply stops. I think it may be a connection time out to MySQL:*
-https://stackoverflow.com/questions/22684807/spring-boot-jpa-configuring-auto-reconnect
+*Warning Current Application.Properties will whipe database if spring app is ran*
 
 Should do:
 
