@@ -6,6 +6,8 @@ hosted via google cloud @ http://mochijump.com/
 
 *Warning Current Application.Properties will whipe database if spring app is ran*
 
+Let's try setting ddl to update and running a test
+
 Should do:
 
 Add new download desktop app button on landing page
@@ -20,8 +22,3 @@ Add app to email interface
 
 Add relationships to entities and automate data migration
 
-Current Interest:
-
-I want to convert this project from living on the Compute Engine to the App Engine:
-
-https://codelabs.developers.google.com/codelabs/cloud-app-engine-springboot/index.html?index=..%2F..%2Findex#0
