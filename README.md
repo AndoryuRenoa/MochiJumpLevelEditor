@@ -6,7 +6,7 @@ hosted via google cloud @ http://mochijump.com/
 
 *Warning Current Application.Properties will whipe database if spring app is ran*
 
-Let's try setting ddl to update and running a test
+Let's try dupping the production database setting ddl to update and running a test
 
 Should do:
 
