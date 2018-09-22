@@ -211,8 +211,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 				var height = response[0].height;
 				var hairClipStartX = response[0].hairClipStartX;
 				var hairClipStartY = response[0].hairClipStartY;
-				var gooseClipStartX = response[0].gooseClipStartX;
-				var gooseClipStartY = response[0].gooseClipStartY;
+				var gooseStartX = response[0].gooseStartX;
+				var gooseStartY = response[0].gooseStartY;
 				for (var i =0; i<startX.length; i++){
 					
 					console.log ("ready", startX.length == height.length );
@@ -238,10 +238,11 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			        document.getElementById("paintBox").appendChild(svg);
 				}
 				
-				for (var i=0; i< gooseClipStartX.length; i++){
+				for (var i=0; i< gooseStartX.length; i++){
+					
 					var newGooseNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-					newGooseNPC.setAttribute('x', gooseClipStartX[i]-pBRects.left-5);
-					newGooseNPC.setAttribute('y', gooseClipStartY[i]-pBRects.top-5);
+					newGooseNPC.setAttribute('x', gooseStartX[i]-pBRects.left-5);
+					newGooseNPC.setAttribute('y', gooseStartY[i]-pBRects.top-5);
 					newGooseNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'images/GooseFlyLeft1.png');
 					newGooseNPC.setAttribute('class', 'gooseNPC');
 					svg.appendChild(newGooseNPC);
