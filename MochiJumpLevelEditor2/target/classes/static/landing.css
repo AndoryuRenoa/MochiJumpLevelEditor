@@ -26,6 +26,8 @@
 	  left: 50%;
 	  transform: translate(-50%, -50%);
 	}
+	
+	
 	.container1{	
 		position: fixed;
 		margin-bottom: 10%;
@@ -43,6 +45,26 @@
 
 	}
 	.selector1, .right1{
+	  flex: 1;
+	}
+	
+	.container3{	
+		position: fixed;
+		margin-top: 8%;
+	  width: 100%;
+	  top: 50%;
+	  display: inline-flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
+	.option3{
+
+	}
+	.selectorimg3{
+	float: right;
+
+	}
+	.selector3, .right3{
 	  flex: 1;
 	}
 
