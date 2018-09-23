@@ -30,6 +30,12 @@ public class MainController {
 		return"draw.html";
 	}
 	
+	@GetMapping(path = "/version")
+	public @ResponseBody String getVersion(){
+			return "0.2.4";
+	}
+	
+	
 	@GetMapping(path="/returnAll")
 	public @ResponseBody Iterable <Level> getAllUserInputs(){
 		return uRepository.findAll();
