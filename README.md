@@ -15,3 +15,5 @@ Nice to do:
 Add app to email interface
 
 https://docs.spring.io/spring/docs/3.0.5.RELEASE/reference/mail.html
+
+https://docs.spring.io/spring-integration/docs/5.0.1.RELEASE/api/org/springframework/integration/mail/dsl/Mail.html
