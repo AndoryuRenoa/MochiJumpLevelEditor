@@ -18,4 +18,6 @@ https://docs.spring.io/spring/docs/3.0.5.RELEASE/reference/mail.html
 
 https://docs.spring.io/spring-integration/docs/5.0.1.RELEASE/api/org/springframework/integration/mail/dsl/Mail.html
 
+https://stackoverflow.com/questions/29072628/how-to-override-spring-boot-application-properties-programmatically
+
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config
