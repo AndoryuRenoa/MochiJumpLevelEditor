@@ -23,3 +23,5 @@ https://stackoverflow.com/questions/29072628/how-to-override-spring-boot-applica
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config
 
 https://stackoverflow.com/questions/46736711/update-the-application-property-in-java
+
+https://stackoverflow.com/questions/45720943/spring-boot-override-properties-from-a-user-specific-file
