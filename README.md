@@ -13,3 +13,5 @@ Change alerts & url for level editor
 Nice to do:
 
 Add app to email interface
+
+https://docs.spring.io/spring/docs/3.0.5.RELEASE/reference/mail.html
