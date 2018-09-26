@@ -8,6 +8,8 @@ Email App Created. It is currently a seperate app from the main one. Considering
 
 Next up:
 
+I need to change the client to import levels individually, the returnAll api causes a significant increase in CPU usage at this point.
+
 Okay, I'm going to attempt to get the emailer app on Google App Engine. I'll rewrite it to use maven as I've read about issues with spring/gradle/jetty 
 
 Should do:
