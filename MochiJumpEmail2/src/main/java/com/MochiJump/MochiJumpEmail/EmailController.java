@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class EmailController {
     @Autowired
     private JavaMailSender sender;
-    @RequestMapping("/simpleemail")
+    @RequestMapping("/email/test")
     @ResponseBody
     String home() {
         try {
             sendEmail();
-            return "Email Sent!";
+            return "success";
         }catch(Exception ex) {
             return "Error in sending email: "+ex;
         }
