@@ -8,9 +8,9 @@ Email App Created. It is currently a seperate app from the main one. Considering
 
 Next up:
 
-I need to change the client to import levels individually, the returnAll api causes a significant increase in CPU usage at this point. This needs to be implemented here in controller and repository classes. I must've removed that prior to last commit.
+Create logging file for LevelEditor APP and wait for issue that causes APP to shut down after a week of continuous running.
 
-Okay, I'm going to attempt to get the emailer app on Google App Engine. I'll rewrite it to use maven as I've read about issues with spring/gradle/jetty 
+I need to change the client to import levels individually, the returnAll api causes a significant increase in CPU usage at this point. This needs to be implemented here in controller and repository classes. I must've removed that prior to last commit.
 
 Should do:
 
@@ -20,4 +20,4 @@ Change alerts & url for level editor
 
 Notes:
 
-App still fails after a week. Updated it to fix possible failure as a result of MySQL connection. Monitored it to observe RAM ussage, no problem there.
+Unexpected shutdowns occur. Updated it to fix possible failure as a result of MySQL connection. Monitored it to observe RAM ussage, no problem there.
