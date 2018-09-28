@@ -17,3 +17,7 @@ Should do:
 add arrows to move view point in level editor
 
 Change alerts & url for level editor
+
+Notes:
+
+App still fails after a week. Updated it to fix possible failure as a result of MySQL connection. Monitored it to observe RAM ussage, no problem there.
