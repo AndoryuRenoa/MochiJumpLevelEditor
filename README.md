@@ -5,10 +5,10 @@ Current Status: MJLE-0.2.4
 hosted via google cloud @ http://mochijump.com/
 
 Next up:
-*I'm having issues sending a POST request from one APP to another, the OutputStream writer is messing with the JSON format*
-https://stackoverflow.com/questions/20740349/http-post-request-with-json-string-in-java
 
 Adding emailer app. Google made this difficult enough that the emailer app is going to live on AWS now
+
+Working Prototype. Now just need to add art for the button and to make the emailer updates lives
 
 Now it's time to combine landing page and the emailer app!
 
