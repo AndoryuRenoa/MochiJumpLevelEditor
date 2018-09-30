@@ -18,3 +18,6 @@ add arrows to move view point in level editor
 
 Change alerts & url for level editor
 
+Want to do:
+
+I kind of want to setup mail server for MochiJump using Apache-James
