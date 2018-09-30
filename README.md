@@ -4,11 +4,11 @@ Current Status: MJLE-0.2.4
 
 hosted via google cloud @ http://mochijump.com/
 
-Email App Created. It is currently a seperate app from the main one. Considering combining them...
-
 Next up:
 
 Adding emailer app. Google made this difficult enough that the emailer app is going to live on AWS now
+
+Now it's time to combine landing page and the emailer app!
 
 Should do:
 
