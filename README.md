@@ -8,11 +8,11 @@ Email App Created. It is currently a seperate app from the main one. Considering
 
 Next up:
 
-*Note: this web app will have to fail at least one more time to determine cause of failure after a period of about a week of continuous running*
-
-I need to change the client to import levels individually, the returnAll api causes a significant increase in CPU usage at this point. This needs to be implemented here in controller and repository classes. I must've removed that prior to last commit.
+Adding emailer app. Google made this difficult enough that the emailer app is going to live on AWS now
 
 Should do:
+
+need to change the client to import levels individually, the returnAll api causes a significant increase in CPU usage at this point. This needs to be implemented here in controller and repository classes. I must've removed that prior to last commit.
 
 add arrows to move view point in level editor
 
