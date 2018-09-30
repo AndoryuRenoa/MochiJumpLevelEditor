@@ -16,13 +16,27 @@
     background-color: rgb(130, 146, 173); 
     background-color: rgb(130, 146, 173,1); 
 	}
+	.message {
+    visibility:hidden;
+    position: fixed;
+    z-index: 1; 
+    padding-top: 10px; 
+    left: 25%;
+    top: 5%;
+    width: 50%; 
+    overflow: auto; 
+	border-radius: 25px;
+    border: 2px solid #5c6a82;
+    background-color: rgb(130, 146, 173); 
+    background-color: rgb(130, 146, 173,1); 
+	}
 	.aboutButton{
 	display: flex; justify-content: center
 	}
 
 	.mochiIcon{
 	  position: fixed;
-	  top: 20%;
+	  top: 35%;
 	  left: 50%;
 	  transform: translate(-50%, -50%);
 	}
@@ -30,7 +44,7 @@
 	
 	.container1{	
 		position: fixed;
-		margin-bottom: 10%;
+		margin-bottom: 5%;
 	  width: 100%;
 	  top: 50%;
 	  display: inline-flex;
@@ -50,7 +64,7 @@
 	
 	.container3{	
 		position: fixed;
-		margin-top: 8%;
+		margin-top: 5%;
 	  width: 100%;
 	  top: 50%;
 	  display: inline-flex;
@@ -70,7 +84,7 @@
 
 	.container2{
 		position: fixed;
-		margin-top: 15%;
+		margin-top: 10%;
 	  width: 100%;
 	  top: 50%;
 	  display: inline-flex;
@@ -85,5 +99,24 @@
 
 	}
 	.selector2, .right2{
+	  flex: 1;
+	}
+	.container4{
+		position: fixed;
+		margin-top: 15%;
+	  width: 100%;
+	  top: 50%;
+	  display: inline-flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
+	.option4{
+
+	}
+	.selectorimg4{
+	float: right;
+
+	}
+	.selector4, .right4{
 	  flex: 1;
 	}

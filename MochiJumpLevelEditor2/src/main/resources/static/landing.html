@@ -5,14 +5,14 @@
 	</head>
 	<body>
 	<div class = "modal" id ="modal">
-	<p>This project is still a work in progress</p>
+	<p>This a portfolio project still in development</p>
 	<p> MochiJump is a personal project designed by Andrew Lenoir.</P>
-	<p> It is broken into two projects </p>
+	<p> It is broken into two parts </p>
 	<p></p>
-	<p> MochiJump is a stand alone Desktop App that functions as a 2D 8 bit style platformer game. It is written in Java</p>
-	<p> MochiJumpLevelEditor is the project that power's this website. Proceeding to "lvl edit" will allow you to retrieve levels or paint your own</p> 
+	<p> The game, MochiJump is a stand alone Desktop App that functions as a 2D 8 bit style platformer game. It is written in Java</p>
+	<p> The web app, MochiJumpLevelEditor is the project that power's this website. Proceeding to "lvl edit" will allow you to retrieve levels or paint your own</p> 
 	<p>The backend is written in Java and uses the Spring Framework along with a MySQL server. <p>
-	<p>It is hosted on gCloud using the Compute Engine running an f1-micro machine instance with an Ubuntu OS.</p>
+	<p>It broken into microservices making use of both Google Cloud's Compute Engine as well as AWS</p>
 	<p style= "padding-left: 30pt">	Check out the Desktop App source code
 		<a href="https://github.com/AndoryuRenoa/MochiJump">here</a>
 		</p>
@@ -25,6 +25,24 @@
 		<div class ="aboutButton">
 		<button id="hideAbout" style= > Close </button>
 		</div>
+	</div>
+	<div class = "message" id = "message">
+	<p> Testing Message Sender </p>
+	<p> Subject
+	<input type="text" id ="subject"  value = "Type Subject here"/><p/>
+	<p> Email
+	<input type="text" id ="email" value = "*Optional"></p>
+	<p> Message</p>
+	<div style ="padding-left:5px">
+		<textarea id ="messageBody" cols="100" rows="30" > 
+		</textarea>
+	</div>
+	<p></p>
+	<div style ="padding-left:5px">
+		<button id= "sendMessage">Send message</button>
+		<button id= "cancelMessage" style ="padding-left:5px">Cancel</button>
+		</div>
+		<p></p>
 	</div>
 	<div class ="mochiIcon" id="mochiIcon">
 		<img class="icon" src = "/images/background.png" ></img>
@@ -55,8 +73,7 @@
 
 	</div>
 	
-		<div class ="container2">
-	<!-- vertical-align doesn't work -->
+	<div class ="container2">
 		<div class="selector2" id="selector2">
 			<img class= "selectorimg2" id="selectorimg2" src ="/images/bone1M.png" style ="visibility: hidden"></img>
 		</div>
@@ -64,6 +81,15 @@
 			<img  src = "/images/about.png" style="float: right;"></img>
 		</div>
 		<div class = "right2"> </div>
+</div>
+	<div class ="container4">
+		<div class="selector4" id="selector4">
+			<img class= "selectorimg4" id="selectorimg4" src ="/images/bone1M.png" style ="visibility: hidden"></img>
+		</div>
+		<div class="option4" id="option4">
+			<img  src = "/images/about.png" style="float: right;"></img>
+		</div>
+		<div class = "right4"> </div>
 
 	</div>
 

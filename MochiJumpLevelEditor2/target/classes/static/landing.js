@@ -7,6 +7,11 @@ counter = 0;
 	document.getElementById("hideAbout").addEventListener("click",hideAbout);
 	document.getElementById("option3").addEventListener("mouseenter", opt3Show);
 	document.getElementById("option3").addEventListener("mouseleave", opt3Hide);
+	document.getElementById("option4").addEventListener("mouseenter", opt4Show);
+	document.getElementById("option4").addEventListener("mouseleave", opt4Hide);
+	document.getElementById("option4").addEventListener("click", showMessage);
+	document.getElementById("cancelMessage").addEventListener("click", hideMessage);
+	document.getElementById("sendMessage").addEventListener("click", sendMessage);
 	id = setInterval (optAni, 150);
 	function optAni(){
 	
@@ -17,22 +22,26 @@ counter = 0;
 				document.getElementById("selectorimg1").src ="/images/bone1M.png";
 				document.getElementById("selectorimg2").src ="/images/bone1M.png";
 				document.getElementById("selectorimg3").src ="/images/bone1M.png";
+				document.getElementById("selectorimg4").src ="/images/bone1M.png";
 				counter++;
 			}
 			else if (counter == 1){
 				document.getElementById("selectorimg1").src ="/images/bone2M.png";
 				document.getElementById("selectorimg2").src ="/images/bone2M.png";
 				document.getElementById("selectorimg3").src ="/images/bone2M.png";
+				document.getElementById("selectorimg4").src ="/images/bone2M.png";
 				counter++;
 			}else if (counter == 2){
 				document.getElementById("selectorimg1").src ="/images/bone3M.png";
 				document.getElementById("selectorimg2").src ="/images/bone3M.png";
 				document.getElementById("selectorimg3").src ="/images/bone3M.png";
+				document.getElementById("selectorimg4").src ="/images/bone3M.png";
 				counter++;
 			}else if (counter == 3){
 				document.getElementById("selectorimg1").src ="/images/bone4M.png";
 				document.getElementById("selectorimg2").src ="/images/bone4M.png";
 				document.getElementById("selectorimg3").src ="/images/bone4M.png";
+				document.getElementById("selectorimg4").src ="/images/bone4M.png";
 				counter =0;
 			}
 		}
@@ -59,4 +68,36 @@ counter = 0;
 		}	
 	function opt3Hide(){
 		document.getElementById("selectorimg3").style.visibility="hidden";	
+	}
+	function opt4Show(){
+		document.getElementById("selectorimg4").style.visibility="visible";
+		}	
+	function opt4Hide(){
+		document.getElementById("selectorimg4").style.visibility="hidden";	
+	}
+	function showMessage(){
+		document.getElementById("message").style.visibility="visible";
+	}
+	function hideMessage(){
+		document.getElementById("message").style.visibility="hidden";
+	}
+	
+	function sendMessage(){
+		var subject = document.getElementById("subject").value;
+		var email = document.getElementById("email").value;
+		var messageBody = document.getElementById("messageBody").value;
+		var collection ={subject, email, messageBody};
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "/test/message")
+		var messageJSON = JSON.stringify(collection);
+		alert(messageJSON);
+		xhttp.onload = function(){
+			if (xhttp.readyState == 4 && xhttp.status == 200){
+				var response = xhttp.response;
+				console.log("task complete", responseText == response);
+				var responseText = response;
+				alert(response);	
+			}
+		};
+		xhttp.send(messageJSON);
 	}

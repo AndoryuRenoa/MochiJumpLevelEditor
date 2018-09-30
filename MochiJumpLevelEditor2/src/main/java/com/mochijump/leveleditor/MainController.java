@@ -5,8 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +20,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
+
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -51,13 +59,13 @@ public class MainController {
 		return uRepository.findByLevelName(name);
 	}
 	
-	@GetMapping(path="/email")
+	@GetMapping(path="/emailTest")
 	public @ResponseBody String sendEmail() {
 		String output;
 		String output2="";
 		try {
 			
-			URL url = new URL("http://localhost:8090/email/test");
+			URL url = new URL("http://mochijumpemailer-env.evyk8k3wmq.us-east-2.elasticbeanstalk.com/email/test");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			if (conn.getResponseCode() != 200) {
                 throw new RuntimeException("Failed : HTTP Error code : "
@@ -72,7 +80,7 @@ public class MainController {
             return output2;
 		}
 		catch (Exception e) {
-			return "unable to check new releases due to connection";
+			return "error" + e;
 		}	
 	}
 	
@@ -101,15 +109,37 @@ public class MainController {
 		}
 	}
 	
+	
 	@PostMapping(path="/message")
+	public @ResponseBody String sendRestMessage (@RequestBody String s) {
+		HttpHeaders headers = new HttpHeaders();
+		RestTemplate rest = new RestTemplate();
+		HttpStatus status;
+		HttpEntity <String> requestEntity = new HttpEntity (s, headers);
+		ResponseEntity<String> responseEntity = rest.exchange("http://localhost:8090/email/message", HttpMethod.POST, requestEntity, String.class);
+		status = responseEntity.getStatusCode();
+		return responseEntity.getBody();
+	
+	}
+	
+	
+	
+	@PostMapping(path="/message2")
 	public @ResponseBody String sendMessage (@RequestBody String s) {
+		
 		String output;
 		String output2="";
-		// this needs to send (s), research format;
+		
 		try {
 			
-			URL url = new URL("http://localhost:8090/email/test");
+			URL url = new URL("http://localhost:8090/email/message");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+			
+			conn.setDoOutput(true);
+			conn.getOutputStream().write(s.getBytes(StandardCharsets.UTF_8));
+			
 			if (conn.getResponseCode() != 200) {
                 throw new RuntimeException("Failed : HTTP Error code : "
                         + conn.getResponseCode());
@@ -123,9 +153,8 @@ public class MainController {
             return output2;
 		}
 		catch (Exception e) {
-			return "unable to check new releases due to connection";
+			return "error" +e;
 		}	
-	}
 	}
 	
 }
