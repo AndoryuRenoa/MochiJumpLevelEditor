@@ -7,6 +7,8 @@ multiple services, including google cloud & AWS entry point is: http://mochijump
 
 Next up:
 
+At the very least warn user's the app isn't optimized for mobile.
+
 need to resize message textarea it's both too tall and too wide for some resolutions.
 
 *fix typo in modal div*
