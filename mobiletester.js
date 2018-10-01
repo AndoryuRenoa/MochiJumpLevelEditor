@@ -13,5 +13,7 @@ window.jscd = {
         mobile: mobile,
     };
 }(this));
-   
-alert('Mobile: ' + jscd.mobile + '\n' );
+if (jscd.mobile == false){
+	alert("This web app is not designed for mobile. Please "+
+  "view on a desktop browser");
+  }
