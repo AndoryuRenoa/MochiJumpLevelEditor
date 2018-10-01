@@ -2,15 +2,12 @@
 
 Current Status: MJLE-0.2.4
 
-hosted via google cloud @ http://mochijump.com/
+multiple services, including google cloud & AWS entry point is: http://mochijump.com/
+
 
 Next up:
 
-Adding emailer app. Google made this difficult enough that the emailer app is going to live on AWS now
-
-Working Prototype. Now just need to add art for the button and to make the emailer updates lives
-
-Now it's time to combine landing page and the emailer app!
+need to resize message textarea it's both too tall and too wide for some resolutions.
 
 Should do:
 
