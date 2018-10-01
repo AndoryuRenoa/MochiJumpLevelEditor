@@ -90,14 +90,14 @@ counter = 0;
 		var xhttp = new XMLHttpRequest();
 		xhttp.open("POST", "/test/message")
 		var messageJSON = JSON.stringify(collection);
-		alert(messageJSON);
 		xhttp.onload = function(){
 			if (xhttp.readyState == 4 && xhttp.status == 200){
 				var response = xhttp.response;
-				console.log("task complete", responseText == response);
 				var responseText = response;
+				console.log("task complete", responseText == response);
 				alert(response);	
 			}
 		};
 		xhttp.send(messageJSON);
+		document.getElementById("message").style.visibility="hidden";
 	}
