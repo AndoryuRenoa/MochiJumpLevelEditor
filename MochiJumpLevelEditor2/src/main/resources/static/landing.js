@@ -95,9 +95,9 @@ counter = 0;
 				var response = xhttp.response;
 				var responseText = response;
 				console.log("task complete", responseText == response);
-				alert(response);	
+				document.getElementById("message").style.visibility="hidden";
+				alert(response);
 			}
 		};
 		xhttp.send(messageJSON);
-		document.getElementById("message").style.visibility="hidden";
 	}
