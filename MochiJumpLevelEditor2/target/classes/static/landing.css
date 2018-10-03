@@ -21,14 +21,19 @@
     position: fixed;
     z-index: 1; 
     padding-top: 10px; 
-    left: 25%;
+    left: 33%;
     top: 5%;
-    width: 50%; 
+    width: 33%; 
     overflow: auto; 
 	border-radius: 25px;
     border: 2px solid #5c6a82;
     background-color: rgb(130, 146, 173); 
     background-color: rgb(130, 146, 173,1); 
+	}
+	.message .messageBody{
+	  width: 95%;
+	  padding-left: 5px;
+	  height: 200px;
 	}
 	.aboutButton{
 	display: flex; justify-content: center
