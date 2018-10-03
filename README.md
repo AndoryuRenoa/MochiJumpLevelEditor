@@ -13,6 +13,8 @@ need to resize message textarea it's both too tall and too wide for some resolut
 
 *fix typo in modal div*
 
+Create user/password functionality
+
 Should do:
 
 need to change the client to import levels individually, the returnAll api causes a significant increase in CPU usage at this point. This needs to be implemented here in controller and repository classes. I must've removed that prior to last commit.
