@@ -18,3 +18,6 @@ if (jscd.mobile == true){
   "view on a desktop browser. Plans are in the works for "+
   "mobile accessability");
   }
+if (jscd.mobile == false){
+	console.log ("thanks for viewing this on a desktop/latop!");
+}
