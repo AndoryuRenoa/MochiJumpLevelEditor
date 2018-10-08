@@ -1,5 +1,7 @@
 # MochiJumpLevelEditor
 
+*Replacing the currently statically served front end with an angular project! Changing the Spring Apps to back end work only*
+
 Current Status: MJLE-0.2.4
 
 multiple services, including google cloud & AWS entry point is: http://mochijump.com/
