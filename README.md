@@ -1,6 +1,6 @@
 # MochiJumpLevelEditor
 
-*Replacing the currently statically served front end with an angular project! Changing the Spring Apps to back end work only*
+*Replacing the currently statically served front end with an angular project! Changing the Spring Apps to back end work only, while I work on the new front end this repository will not likely be updated*
 
 Current Status: MJLE-0.2.4
 
