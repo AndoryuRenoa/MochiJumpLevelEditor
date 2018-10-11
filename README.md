@@ -2,6 +2,8 @@
 
 *Replacing the currently statically served front end with an angular project! Changing the Spring Apps to back end work only, while I work on the new front end this repository will not likely be updated*
 
+Update: BackEndFailure : https://stackoverflow.com/questions/45519145/spring-boot-mysql-community-server
+
 Current Status: MJLE-0.2.4
 
 multiple services, including google cloud & AWS entry point is: http://mochijump.com/
