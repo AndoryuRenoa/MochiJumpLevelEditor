@@ -2,7 +2,7 @@
 
 *Replacing the currently statically served front end with an angular project! Changing the Spring Apps to back end work only, while I work on the new front end this repository will not likely be updated*
 
-Update: BackEndFailure : https://stackoverflow.com/questions/45519145/spring-boot-mysql-community-server
+For combining the front and back-end: https://techshard.com/2018/08/12/building-a-web-app-using-spring-boot-angular-6-and-maven/
 
 Current Status: MJLE-0.2.4
 
