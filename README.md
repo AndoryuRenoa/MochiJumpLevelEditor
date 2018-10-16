@@ -1,8 +1,6 @@
 # MochiJumpLevelEditor
 
-*Replacing the currently statically served front end with an angular project! Changing the Spring Apps to back end work only, while I work on the new front end this repository will not likely be updated*
-
-For combining the front and back-end: https://techshard.com/2018/08/12/building-a-web-app-using-spring-boot-angular-6-and-maven/
+*Replacing the currently statically served front end with an angular project! New repsitory for the combined product!
 
 Current Status: MJLE-0.2.4
 
@@ -16,11 +14,9 @@ https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-u
 
 Next up:
 
-*fix typo in modal div*
-
 Create user/password functionality
 
-At the very least warn users the app isn't optimized for mobile. See mobiletester.js
+create registration by email: https://www.baeldung.com/registration-verify-user-by-email
 
 Should do:
 
@@ -29,7 +25,3 @@ need to change the client to import levels individually, the returnAll api cause
 add arrows to move view point in level editor
 
 Change alerts & url for level editor
-
-Want to do:
-
-I kind of want to setup mail server for MochiJump using Apache-James
