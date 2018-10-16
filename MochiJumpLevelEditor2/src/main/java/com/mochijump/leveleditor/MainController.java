@@ -35,7 +35,9 @@ public class MainController {
 	
 	
 	@Autowired
-	private LevelRepository uRepository;
+	private LevelRepository levelRepository;
+	@Autowired
+	private UserRepository userRepository;
 	
 	@RequestMapping("")
 	public String drawPageLaunch() {
@@ -50,13 +52,32 @@ public class MainController {
 	
 	@GetMapping(path="/returnAll")
 	public @ResponseBody Iterable <Level> getAllUserInputs(){
-		return uRepository.findAll();
+		return levelRepository.findAll();
+	}
+	
+	
+	// this obviously will need to be changed later
+	@GetMapping(path="/returnAllUsers")
+	public @ResponseBody Iterable <User> getListOfAllUsers(){
+		return userRepository.getAllExceptPassword();
+	}
+	
+	@RequestMapping(path="/addUser")
+	public @ResponseBody String addUser(@RequestParam String firstName, @RequestParam String userName,
+			@RequestParam String emailAddress, @RequestParam String password){
+		User newUser = new User ();
+		newUser.setUserFirstName(firstName);
+		newUser.setUserName(userName);
+		newUser.setEmailAddress(emailAddress);
+		newUser.setPassword(password);
+		userRepository.save(newUser);
+		return "User added";
 	}
 	
 	
 	@GetMapping(path="/return")
 	public @ResponseBody Iterable <Level> getLevel (@RequestParam String name) {
-		return uRepository.findByLevelName(name);
+		return levelRepository.findByLevelName(name);
 	}
 	
 	@GetMapping(path="/emailTest")
@@ -92,14 +113,14 @@ public class MainController {
 		Level i = mapper.readValue(s, Level.class);
 		Level exists = null;
 		try {
-			exists = uRepository.findByLevelName(i.getLevelName()).get(0);
+			exists = levelRepository.findByLevelName(i.getLevelName()).get(0);
 		}catch (Exception e) {
 			//this Exception will be thrown every time a new level is made
 		}
 		if (exists != null){
 			i.setId(exists.getId());
 		}
-		uRepository.save(i);
+		levelRepository.save(i);
 		} catch (JsonMappingException e) {
 		    e.printStackTrace();
 		} catch (JsonGenerationException e) {
