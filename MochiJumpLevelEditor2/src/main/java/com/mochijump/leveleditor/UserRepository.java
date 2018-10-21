@@ -9,5 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface UserRepository extends CrudRepository<User, Long> {
 	@Query ("select u.userFirstName, u.userName, u.emailAddress from User u")
 	List<User> getAllExceptPassword();
+	
+	User findByUserName(String userName);
 
 }

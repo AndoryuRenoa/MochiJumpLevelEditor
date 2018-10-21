@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.security.Principal;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -48,6 +50,11 @@ public class MainController {
 	public @ResponseBody String getVersion(){
 			return "0.2.4";
 	}
+	
+	@RequestMapping("/user")
+	  public Principal user(Principal user) {
+	    return user;
+	  }
 	
 	
 	@GetMapping(path="/returnAll")
@@ -144,5 +151,31 @@ public class MainController {
 	
 	}
 	
+	@PostMapping (path='/newUserCreation')
+	public @ResponseBody String makeNewUser (@RequestBody NewUserTemplate newUserT) {
+		Random rand = new Random();
+		User newUser = new User();
+		newUser.setEmailAddress(newUserT.getEmailAddress());
+		newUser.setIsAccountNonLocked(false);
+		newUser.setKey(rand.nextLong());
+		newUser.setPassword(newUserT.getPassword());
+		newUser.setUserName(newUserT.getUserName());
+		newUser.setUserFirstName(newUserT.getUserFirstName());
+		userRepository.save(newUser);
+		
+		// now have to create URL for activateResponse
+		return "success";
+	}
+	
+	@RequestMapping (path='/activate')
+	public @ResponseBody String activateUser (@RequestBody String username, long userKey) {
+		User activateMe = userRepository.findByUserName(username);
+		if (userKey == activateMe.getKey()) {
+			activateMe.setIsAccountNonLocked(true);
+			return "success";
+		} else {
+			return "failure";
+		}
+	}
 	
 }
