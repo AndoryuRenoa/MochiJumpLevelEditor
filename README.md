@@ -16,7 +16,7 @@ Next up:
 
 Create user/password functionality
 
-create registration by email: https://www.baeldung.com/registration-verify-user-by-email
+create registration by email
 
 Should do:
 
