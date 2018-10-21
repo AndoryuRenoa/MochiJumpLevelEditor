@@ -1,6 +1,6 @@
 # MochiJumpLevelEditor
 
-*Replacing the currently statically served front end with an angular project! New repsitory for the combined product!
+*Replacing the currently statically served front end with an angular project! New repsitory for the combined product!: https://github.com/AndoryuRenoa/MochiJumpWeb-SinglePackageDeployment
 
 Current Status: MJLE-0.2.4
 
