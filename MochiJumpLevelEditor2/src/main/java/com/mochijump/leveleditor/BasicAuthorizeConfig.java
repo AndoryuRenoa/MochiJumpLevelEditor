@@ -24,17 +24,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+        .csrf().disable()
         .httpBasic()
         .and()
         .authorizeRequests().antMatchers("/", "/mainmenu", "/runtime**",
         		"/polyfills**", "/favicon.ico", "/vendor**", "/styles**", 
-        		"/main**", "/login", "/loginProcessor", "/test/activate",
-        		"/test/newUserCreation").permitAll()
-        .anyRequest().authenticated();
-        /*
+        		"/main**", "/login", "/loginProcessor", "/test/activate**",
+        		"/test/newUserCreation**", "/error", "/images/**").permitAll()
+        //okay so anything you want to have locked must be a level deeper "/" gives permission to everything
+        //on the first level apparently
+        .antMatchers("/levelEditor").authenticated()
+        .anyRequest().authenticated()
         .and()
         .formLogin()
-        .loginPage("/login")
+        .loginPage("/login");
+        /*
         .usernameParameter("username")
         .passwordParameter("password")
         .defaultSuccessUrl("/mainmenu")
@@ -44,12 +48,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
         .logout();
         */
     }
-    
+/*    
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.debug(true);
     }
-    
+  */  
     @Override
     protected void configure (AuthenticationManagerBuilder auth) {
     	auth.authenticationProvider(authenticationProvider());

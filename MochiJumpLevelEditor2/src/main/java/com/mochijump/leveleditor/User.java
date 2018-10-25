@@ -19,9 +19,9 @@ public class User {
 	
 	private String password;
 	
-	private Boolean isAccountNonLocked;
+	private boolean isAccountNonLocked;
 	
-	private Long key;
+	private Long keyNum;
 	
 	public Integer getId () {
 		return id;
@@ -64,20 +64,20 @@ public class User {
 		this.userFirstName = userFirstName;
 	}
 	
-	public Boolean getIsAccountNonLocked () {
+	public boolean getIsAccountNonLocked () {
 		return isAccountNonLocked;
 	}
 	
-	public void setIsAccountNonLocked (Boolean isAccountNonLocked) {
+	public void setIsAccountNonLocked (boolean isAccountNonLocked) {
 		this.isAccountNonLocked = isAccountNonLocked;
 	}
 	
-	public Long getKey () {
-		return this.key;
+	public Long getKeyNum () {
+		return this.keyNum;
 	}
 	
-	public void setKey (Long key) {
-		this.key = key;
+	public void setKeyNum (Long keyNum) {
+		this.keyNum = keyNum;
 	}
 	
 }

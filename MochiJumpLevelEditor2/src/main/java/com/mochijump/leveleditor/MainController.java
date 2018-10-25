@@ -51,9 +51,10 @@ public class MainController {
 			return "0.2.4";
 	}
 	
-	@RequestMapping("/user")
-	  public Principal user(Principal user) {
-	    return user;
+	@RequestMapping(path = "/user")
+	  public @ResponseBody String user(Principal user) {
+	    User firstNameFinder = userRepository.findByUserName(user.getName());
+	    return firstNameFinder.getUserFirstName();
 	  }
 	
 	
@@ -151,27 +152,47 @@ public class MainController {
 	
 	}
 	
-	@PostMapping (path='/newUserCreation')
+	
+	// this may need to be changed to string and then mapped to NewUserTemplate
+	@PostMapping (path="/newUserCreation")
 	public @ResponseBody String makeNewUser (@RequestBody NewUserTemplate newUserT) {
 		Random rand = new Random();
 		User newUser = new User();
 		newUser.setEmailAddress(newUserT.getEmailAddress());
 		newUser.setIsAccountNonLocked(false);
-		newUser.setKey(rand.nextLong());
+		newUser.setKeyNum(rand.nextLong());
 		newUser.setPassword(newUserT.getPassword());
 		newUser.setUserName(newUserT.getUserName());
 		newUser.setUserFirstName(newUserT.getUserFirstName());
 		userRepository.save(newUser);
 		
-		// now have to create URL for activateResponse
-		return "success";
+		Message message = new Message();
+		message.setEmail(newUser.getEmailAddress());
+		message.setSubject("Please Activate your new account");
+		message.setMessageBody("Please click the following link to activate your new account :"+
+		"localhost:8080/test/activate?username="+newUser.getUserName()+"&userKey="+newUser.getKeyNum());
+		
+		HttpHeaders headers = new HttpHeaders();
+		RestTemplate rest = new RestTemplate();
+		HttpStatus status;
+		HttpEntity <String> requestEntity = new HttpEntity (message, headers);
+		ResponseEntity<String> responseEntity = rest.exchange("http://mochijumpemailer-env.evyk8k3wmq.us-east-2.elasticbeanstalk.com/email/activateNewAccount", 
+				HttpMethod.POST, requestEntity, String.class);
+		status = responseEntity.getStatusCode();
+		
+		
+		
+		return responseEntity.getBody() + newUser.getIsAccountNonLocked();
+		
+		
 	}
 	
-	@RequestMapping (path='/activate')
-	public @ResponseBody String activateUser (@RequestBody String username, long userKey) {
+	@RequestMapping (path="/activate")
+	public @ResponseBody String activateUser (@RequestParam String username, @RequestParam  long userKey) {
 		User activateMe = userRepository.findByUserName(username);
-		if (userKey == activateMe.getKey()) {
+		if (userKey == activateMe.getKeyNum()) {
 			activateMe.setIsAccountNonLocked(true);
+			userRepository.save(activateMe);
 			return "success";
 		} else {
 			return "failure";
