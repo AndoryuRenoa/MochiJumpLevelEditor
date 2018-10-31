@@ -1,8 +1,8 @@
 # MochiJumpLevelEditor
 
-## Google Cloude
+## Google Cloud
 
-Attempting to upgrade the instance on Google Compute Engine has temporarily shut down hosting. This is due to gCloud not having enough resources to complete the update, which is disconcerting as it's only an increase of 1 gb.
+Attempting to upgrade the instance on Google Compute Engine has temporarily shut down hosting. This is due to gCloud not having enough resources to complete the update, which is disconcerting as it's only an increase of 1 gb.  A workable solution is to create a new instance and change zones, however, this generates a new IP address which requires updating the DNS records. This is a good lesson to learn now. Better to create the replacement first otherwise you risk your site being down for a significant amount of time.
 
 ## Additional Information
 
