@@ -74,6 +74,13 @@ public class MainController {
 	public @ResponseBody String addUser(@RequestParam String firstName, @RequestParam String userName,
 			@RequestParam String emailAddress, @RequestParam String password){
 		User newUser = new User ();
+		User nameTaken = null;
+		try {
+			nameTaken = userRepository.findByUserName(userName);
+			return "Name Taken";
+		}catch (Exception e) {
+			
+		}
 		newUser.setUserFirstName(firstName);
 		newUser.setUserName(userName);
 		newUser.setEmailAddress(emailAddress);
@@ -153,11 +160,23 @@ public class MainController {
 	}
 	
 	
-	// this may need to be changed to string and then mapped to NewUserTemplate
 	@PostMapping (path="/newUserCreation")
 	public @ResponseBody String makeNewUser (@RequestBody NewUserTemplate newUserT) {
 		Random rand = new Random();
 		User newUser = new User();
+		User nameTaken = null;
+		
+		//The below tests if the name is already taken. Please note if there is more than
+		//one username in the database this will not work as nameTaken will be assigned null
+		//because there is no unique answer to the query
+		try {
+			nameTaken = userRepository.findByUserName(newUserT.getUserName());
+		}catch (Exception e) {
+			// to be expected
+		}
+		if (nameTaken != null) {
+			return "Name Taken";
+		}
 		newUser.setEmailAddress(newUserT.getEmailAddress());
 		newUser.setIsAccountNonLocked(false);
 		newUser.setKeyNum(rand.nextLong());
