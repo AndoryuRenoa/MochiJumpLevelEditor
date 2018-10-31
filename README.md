@@ -1,5 +1,11 @@
 # MochiJumpLevelEditor
 
+## Google Cloude
+
+Attempting to upgrade the instance on Google Compute Engine has temporarily shut down hosting. This is due to gCloud not having enough resources to complete the update, which is disconcerting as it's only an increase of 1 gb.
+
+## Additional Information
+
 *Replacing the currently statically served front end with an angular project! New repsitory for the combined product!: https://github.com/AndoryuRenoa/MochiJumpWeb-SinglePackageDeployment
 
 Current Status: MJLE-0.2.4
