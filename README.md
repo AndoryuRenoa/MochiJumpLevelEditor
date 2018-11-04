@@ -9,11 +9,11 @@ Lesson learned, regarding changing instance. Always create and run a backup firs
 
 *Replacing the currently statically served front end with an angular project! New repsitory for the combined product!: https://github.com/AndoryuRenoa/MochiJumpWeb-SinglePackageDeployment
 
-Current Status: MJLE-0.2.4
+Current Status: MJLE-0.2.5
 
 multiple services, including google cloud & AWS entry point is: http://mochijump.com/
 
-Notes:
+## Notes:
 
 The website/level editor running on GCE is killed by the OS due to out of memory error. Attempt to reduce memory usage:
 https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-usage
@@ -21,9 +21,9 @@ https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-u
 
 Next up:
 
-Create user/password functionality
+Create user/password functionality [Done]
 
-create registration by email
+create registration by email [Done]
 
 Should do:
 
