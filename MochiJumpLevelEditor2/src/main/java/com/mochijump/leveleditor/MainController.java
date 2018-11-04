@@ -48,13 +48,18 @@ public class MainController {
 	
 	@GetMapping(path = "/version")
 	public @ResponseBody String getVersion(){
-			return "0.2.4";
+			return "0.2.5";
 	}
 	
 	@RequestMapping(path = "/user")
-	  public @ResponseBody String user(Principal user) {
-	    User firstNameFinder = userRepository.findByUserName(user.getName());
-	    return firstNameFinder.getUserFirstName();
+	  public @ResponseBody NewUserTemplate user(Principal user) {
+	    User uFinder = userRepository.findByUserName(user.getName());
+	    NewUserTemplate userInfo = new NewUserTemplate();
+	    userInfo.setUserName(uFinder.getUserName());
+	    userInfo.setUserFirstName(uFinder.getUserFirstName());
+	    userInfo.setEmailAddress(uFinder.getEmailAddress());
+	    userInfo.setPassword("Hidden");
+	    return userInfo;
 	  }
 	
 	
@@ -147,7 +152,7 @@ public class MainController {
 	
 	
 	@PostMapping(path="/message")
-	public @ResponseBody String sendRestMessage (@RequestBody String s) {
+	public @ResponseBody String sendRestMessage (@RequestBody Message s) {
 		HttpHeaders headers = new HttpHeaders();
 		RestTemplate rest = new RestTemplate();
 		HttpStatus status;
@@ -156,7 +161,6 @@ public class MainController {
 				HttpMethod.POST, requestEntity, String.class);
 		status = responseEntity.getStatusCode();
 		return responseEntity.getBody();
-	
 	}
 	
 	
@@ -189,7 +193,7 @@ public class MainController {
 		message.setEmail(newUser.getEmailAddress());
 		message.setSubject("Please Activate your new account");
 		message.setMessageBody("Please click the following link to activate your new account :"+
-		"localhost:8080/test/activate?username="+newUser.getUserName()+"&userKey="+newUser.getKeyNum());
+		"mochijump.com/test/activate?username="+newUser.getUserName()+"&userKey="+newUser.getKeyNum());
 		
 		HttpHeaders headers = new HttpHeaders();
 		RestTemplate rest = new RestTemplate();

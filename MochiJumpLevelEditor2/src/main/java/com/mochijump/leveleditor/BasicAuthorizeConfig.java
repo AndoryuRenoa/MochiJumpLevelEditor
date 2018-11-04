@@ -30,11 +30,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
         .authorizeRequests().antMatchers("/", "/mainmenu", "/runtime**",
         		"/polyfills**", "/favicon.ico", "/vendor**", "/styles**", 
         		"/main**", "/login", "/loginProcessor", "/test/activate**",
-        		"/test/newUserCreation**", "/error", "/images/**").permitAll()
+        		"/test/newUserCreation**", "/error", "/images/**", "/test/returnAll",
+        		"/test/version", "/test/message**").permitAll()
         //okay so anything you want to have locked must be a level deeper "/" gives permission to everything
         //on the first level apparently
         .antMatchers("/levelEditor").authenticated()
         .anyRequest().authenticated()
+        .and()
+        .requiresChannel().anyRequest().requiresSecure()
         .and()
         .formLogin()
         .loginPage("/login");
