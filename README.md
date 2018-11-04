@@ -15,6 +15,8 @@ multiple services, including google cloud & AWS entry point is: http://mochijump
 
 ## Notes:
 
+Need to release api end-point for version checking.
+
 The website/level editor running on GCE is killed by the OS due to out of memory error. Attempt to reduce memory usage:
 https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-usage
 
