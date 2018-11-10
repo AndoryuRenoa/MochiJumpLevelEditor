@@ -163,6 +163,12 @@ public class MainController {
 		return responseEntity.getBody();
 	}
 	
+	@PostMapping(path="/userLevelList")
+	public @ResponseBody String userLevelList() {
+		//This will return a list, need to update entities/repositories to do this.
+		return "hi";
+	}
+	
 	
 	@PostMapping (path="/newUserCreation")
 	public @ResponseBody String makeNewUser (@RequestBody NewUserTemplate newUserT) {
