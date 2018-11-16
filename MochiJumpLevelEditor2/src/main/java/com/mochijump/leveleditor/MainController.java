@@ -62,6 +62,11 @@ public class MainController {
 	    return userInfo;
 	  }
 	
+	@RequestMapping(path="/changePassword")
+	public @ResponseBody String changePassword (@RequestBody ChangePasswordTemplate template) {
+		return "something";
+	}
+	
 	
 	@GetMapping(path="/returnAll")
 	public @ResponseBody Iterable <Level> getAllUserInputs(){
