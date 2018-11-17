@@ -15,9 +15,11 @@ multiple services, including google cloud & AWS entry point is: http://mochijump
 
 ## Notes:
 
-Need to release api end-point for version checking.
+Currently working on setting up http/2 reliably. Using Java 8 may need libtcnative directory
 
-The website/level editor running on GCE is killed by the OS due to out of memory error. Attempt to reduce memory usage:
+
+## Future Stuff:
+Worth looking into:
 https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-usage
 
 
