@@ -19,7 +19,7 @@ Currently working on setting up http/2 reliably. Using Java 8 may need libtcnati
 
 
 ## Future Stuff:
-The website/level editor running on GCE is killed by the OS due to out of memory error. Attempt to reduce memory usage:
+Worth looking into:
 https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-usage
 
 
