@@ -64,7 +64,17 @@ public class MainController {
 	
 	@RequestMapping(path="/changePassword")
 	public @ResponseBody String changePassword (@RequestBody ChangePasswordTemplate template) {
+		// not finished
+		
 		return "something";
+	}
+	
+	@GetMapping (path="/getDownloadLink")
+	// try using security for this
+	public @ResponseBody String getDownloadLink () {
+		return " {javaURL: https://github.com/AndoryuRenoa/MochiJump/blob/master/dist/MochiJump.jar?raw=true,"
+				+ "exeURL: https://github.com/AndoryuRenoa/MochiJump/blob/master/dist/MochiJump.exe?raw=true"
+				+ "}";
 	}
 	
 	
