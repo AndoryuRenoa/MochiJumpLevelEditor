@@ -7,6 +7,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,11 +72,14 @@ public class MainController {
 	}
 	
 	@GetMapping (path="/getDownloadLink")
-	// try using security for this
-	public @ResponseBody String getDownloadLink () {
-		return " {javaURL: https://github.com/AndoryuRenoa/MochiJump/blob/master/dist/MochiJump.jar?raw=true,"
-				+ "exeURL: https://github.com/AndoryuRenoa/MochiJump/blob/master/dist/MochiJump.exe?raw=true"
-				+ "}";
+	// this hides the download url on the server
+	public @ResponseBody Map<String,String> getDownloadLink() {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("javaURL", 
+				"https://github.com/AndoryuRenoa/MochiJump/blob/master/dist/MochiJump.jar?raw=true");
+		map.put("exeURL",
+				"https://github.com/AndoryuRenoa/MochiJump/blob/master/dist/MochiJump.exe?raw=true");
+		return map;
 	}
 	
 	
