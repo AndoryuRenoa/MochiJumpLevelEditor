@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-import org.hibernate.annotations.GenericGenerator;
-
 @Entity 
 public class Level {
 	@Id

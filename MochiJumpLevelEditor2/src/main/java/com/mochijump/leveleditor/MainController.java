@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
@@ -101,6 +100,7 @@ public class MainController {
 	public @ResponseBody String addUser(@RequestParam String firstName, @RequestParam String userName,
 			@RequestParam String emailAddress, @RequestParam String password){
 		User newUser = new User ();
+		@SuppressWarnings("unused")
 		User nameTaken = null;
 		try {
 			nameTaken = userRepository.findByUserName(userName);
@@ -177,6 +177,7 @@ public class MainController {
 	public @ResponseBody String sendRestMessage (@RequestBody Message s) {
 		HttpHeaders headers = new HttpHeaders();
 		RestTemplate rest = new RestTemplate();
+		@SuppressWarnings("unused")
 		HttpStatus status;
 		HttpEntity <String> requestEntity = new HttpEntity (s, headers);
 		ResponseEntity<String> responseEntity = rest.exchange("http://mochijumpemailer-env.evyk8k3wmq.us-east-2.elasticbeanstalk.com/email/message", 
