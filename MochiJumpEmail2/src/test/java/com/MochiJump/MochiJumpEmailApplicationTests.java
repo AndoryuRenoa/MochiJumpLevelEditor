@@ -11,6 +11,7 @@ public class MochiJumpEmailApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		// for testing if necessary
 	}
 
 }

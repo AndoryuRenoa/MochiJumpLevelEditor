@@ -9,7 +9,8 @@ div.words{
 	float: left;
 }
 div.sizePicker{
-	position: relative	
+	position: relative;	
 	width: 10%;
 	vertical-align: top;
 	display: inline-block;
+}

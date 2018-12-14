@@ -1,4 +1,4 @@
-package com.MochiJump.MochiJumpEmail;
+package com.MochiJump.mochijumpemail;
 
 public class Message {
 	

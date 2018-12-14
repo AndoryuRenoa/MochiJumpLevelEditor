@@ -1,4 +1,4 @@
-package com.MochiJump.MochiJumpEmail;
+package com.MochiJump.mochijumpemail;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class EmailController {
-	ObjectMapper mapper = new ObjectMapper();
+	private ObjectMapper mapper = new ObjectMapper();
     @Autowired
     private JavaMailSender sender;
     @RequestMapping("/email/test")
@@ -41,6 +41,16 @@ public class EmailController {
         sender.send(message);
 
     }
+    private void sendActivationEmail(Message m) throws Exception{
+        MimeMessage message = sender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+        helper.setTo(m.getEmail());
+        helper.setBcc("andrew.a.lenoir@gmail.com");
+        helper.setText(m.getMessageBody());
+        helper.setSubject(m.getSubject());
+        sender.send(message);
+
+    }
     
     private void sendEmailParam(Message m) throws Exception{
         MimeMessage message = sender.createMimeMessage();
@@ -53,7 +63,7 @@ public class EmailController {
     }
     
     @PostMapping("/email/message")
-    public @ResponseBody String interpertMessage (@RequestBody String s) {
+    public @ResponseBody String interpertMessage(@RequestBody String s) {
     	Message m;
     	try {
     		m = mapper.readValue(s, Message.class);
@@ -69,6 +79,30 @@ public class EmailController {
     		}
     	try{
     		sendEmailParam(m);
+    		return "success!";
+    	}catch (Exception e) {
+    		return "sendEmailParam parameter is null";
+    	}
+    	
+    }
+    
+    @PostMapping("/email/activateNewAccount")
+    public @ResponseBody String activateAccount(@RequestBody String s) {
+    	Message m;
+    	try {
+    		m = mapper.readValue(s, Message.class);
+    		} catch (JsonMappingException e) {
+    		    e.printStackTrace();
+    		    return "fail" + e;
+    		} catch (JsonGenerationException e) {
+    		    e.printStackTrace();
+    		    return "fail" + e;
+    		} catch (IOException e) {
+    		    e.printStackTrace();
+    		    return "fail" + e;
+    		}
+    	try{
+    		sendActivationEmail(m);
     		return "success!";
     	}catch (Exception e) {
     		return "sendEmailParam parameter is null";
