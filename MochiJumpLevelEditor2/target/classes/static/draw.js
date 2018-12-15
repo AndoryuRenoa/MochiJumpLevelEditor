@@ -1,7 +1,7 @@
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute ("width", "100%");
     svg.setAttribute ("height", "100%");
-    var npc = document.createElementNS
+    var npc = document.createElementNS;
     var x;
     var y;
     var mouseDown;
@@ -12,26 +12,14 @@
     var allHCNPCs;
     var allGooseNPCs;
     var objectType = "rect";
-    var newgoalNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image')
-	var newMochi = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+    var newgoalNPC = document.createElementNS("http://www.w3.org/2000/svg", "image");
+	var newMochi = document.createElementNS("http://www.w3.org/2000/svg", "image");
     
     var pBRects = document.getElementById("paintBox").getBoundingClientRect();
 document.getElementById("paintBox").style.cursor = "crosshair";
-document.getElementById("paintBox").addEventListener("mousemove",function(event){
-		cordsFunction(event);
-	});
-document.getElementById("paintBox").addEventListener("mouseleave", mouseReset);
-document.getElementById("paintBox").addEventListener("mousedown", mouseDn);
-document.getElementById("paintBox").addEventListener("mouseup", mouseUp);
-document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawBox);
-	function mouseMoveDrawBox(){
-     if (mouseDown == true){
-		makeNewBox();
-      }
-     }
 	function makeNewBox(){
 		
-		if (objectType=="rect"){
+		if (objectType==="rect"){
 	        var newRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     	    newRect.setAttribute("x", (x*2-brushSize)/2);
         	newRect.setAttribute("y", (y*2-brushSize)/2);
@@ -42,17 +30,17 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
         	svg.appendChild(newRect);
         	document.getElementById("paintBox").appendChild(svg);
 		}
-		if (objectType=="hairClipNPC"){
+		if (objectType==="hairClipNPC"){
 			var newHCNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image')
 			newHCNPC.setAttribute("x", x);
 			newHCNPC.setAttribute("y", y);
-			newHCNPC.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/hClipL1.png');
+			newHCNPC.setAttributeNS("http://www.w3.org/1999/xlink","href","/images/hClipL1.png");
         	newHCNPC.setAttribute("class", "hairClipNPC");
 			svg.appendChild(newHCNPC);
         	document.getElementById("paintBox").appendChild(svg);
 			}
-		if (objectType =="gooseNPC"){
-			var newGooseNPC = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+		if (objectType ==="gooseNPC"){
+			var newGooseNPC = document.createElementNS("http://www.w3.org/2000/svg", "image");
 			newGooseNPC.setAttribute("x", x);
 			newGooseNPC.setAttribute("y", y);
 			newGooseNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'images/GooseFlyLeft1.png');
@@ -60,19 +48,19 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			svg.appendChild(newGooseNPC);
 			document.getElementById("paintBox").appendChild(svg);
 		}
-		if (objectType =="goalNPC"){
-			newgoalNPC.setAttribute('x', x);
-			newgoalNPC.setAttribute('y',y);
-			newgoalNPC.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '/images/ball.png');
-			newgoalNPC.setAttribute('class', 'goalNPC')
+		if (objectType ==="goalNPC"){
+			newgoalNPC.setAttribute("x", x);
+			newgoalNPC.setAttribute("y",y);
+			newgoalNPC.setAttributeNS("http://www.w3.org/1999/xlink", "href", "/images/ball.png");
+			newgoalNPC.setAttribute("class", "goalNPC")
 			svg.appendChild(newgoalNPC);
-			document.getElementById('paintBox').appendChild(svg);
+			document.getElementById("paintBox").appendChild(svg);
 		}
-		if (objectType =="mochi"){
+		if (objectType ==="mochi"){
 			
 				newMochi.setAttribute("x", x);
 				newMochi.setAttribute("y", y);
-				newMochi.setAttributeNS('http://www.w3.org/1999/xlink','href','/images/mochirs.png');
+				newMochi.setAttributeNS("http://www.w3.org/1999/xlink","href","/images/mochirs.png");
         		newMochi.setAttribute("class", "mochi");
 				svg.appendChild(newMochi);
         		document.getElementById("paintBox").appendChild(svg);
@@ -88,7 +76,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 	}
     function mouseDn(){
     	mouseDown= true;
-        }
+    	}
     function mouseUp(){
     	mouseDown= false;
 		makeNewBox();
@@ -139,7 +127,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 					startX [i] = Math.round(allRects[i].getBoundingClientRect().x), 
 					startY [i] = Math.round(allRects[i].getBoundingClientRect().y), 
 					height [i] = Math.round(allRects[i].getBoundingClientRect().height), 
-					width [i] = Math.round(allRects[i].getBoundingClientRect().width)}	
+					width [i] = Math.round(allRects[i].getBoundingClientRect().width)};	
 				}
 			allHCNPCs = svg.getElementsByClassName("hairClipNPC");
 			var hairClipStartX =[];
@@ -147,7 +135,8 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			function fillHCNPCArray(){
 				for (var i=0; i<allHCNPCs.length; i++){
 					hairClipStartX[i] = Math.round(allHCNPCs[i].getBoundingClientRect().x ),
-					hairClipStartY[i] = Math.round(allHCNPCs[i].getBoundingClientRect().y )}
+					hairClipStartY[i] = Math.round(allHCNPCs[i].getBoundingClientRect().y );
+					}
 			}
 			
 			allGooseNPCs = svg.getElementsByClassName("gooseNPC");
@@ -162,7 +151,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			
 			var gNPC = svg.getElementsByClassName("goalNPC");
 			if (gNPC[0] == null){
-					alert("Cannot save level without GoalNPC's location set")
+					alert("Cannot save level without GoalNPC's location set");
 			}else{
 			var goalStartX = Math.round(gNPC[0].getBoundingClientRect().x);
 			var goalStartY = Math.round(gNPC[0].getBoundingClientRect().y);
@@ -179,7 +168,7 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 							hairClipStartX, hairClipStartY, gooseStartX, gooseStartY, goalStartX, goalStartY, mochiStartX, mochiStartY};
 					var xhttp = new XMLHttpRequest();
 					var rectsJson = JSON.stringify(collection);
-					xhttp.open("POST", "/test/json")
+					xhttp.open("POST", "/test/json");
 					xhttp.onreadystatechange = function(){
 						if (xhttp.readyState == 4 && xhttp.status == 200){
 							alert("Level Saved");	
@@ -267,3 +256,15 @@ document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawB
 			xhttp.send();
 					
 	}
+document.getElementById("paintBox").addEventListener("mousemove",function(event){
+		cordsFunction(event);
+	});
+document.getElementById("paintBox").addEventListener("mouseleave", mouseReset);
+document.getElementById("paintBox").addEventListener("mousedown", mouseDn);
+document.getElementById("paintBox").addEventListener("mouseup", mouseUp);
+document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawBox);
+	function mouseMoveDrawBox(){
+     if (mouseDown === true){
+		makeNewBox();
+      }
+     }

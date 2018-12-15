@@ -34,7 +34,7 @@ import com.mochijump.leveleditor.LevelRepository;
 @Controller    
 @RequestMapping(path="/test") 
 public class MainController {
-	ObjectMapper mapper = new ObjectMapper();
+	private ObjectMapper mapper = new ObjectMapper();
 	
 	
 	@Autowired
@@ -226,6 +226,7 @@ public class MainController {
 		
 		HttpHeaders headers = new HttpHeaders();
 		RestTemplate rest = new RestTemplate();
+		@SuppressWarnings("unused")
 		HttpStatus status;
 		HttpEntity <String> requestEntity = new HttpEntity (message, headers);
 		ResponseEntity<String> responseEntity = rest.exchange("http://mochijumpemailer-env.evyk8k3wmq.us-east-2.elasticbeanstalk.com/email/activateNewAccount", 
