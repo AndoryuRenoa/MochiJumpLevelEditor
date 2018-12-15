@@ -4,30 +4,19 @@
 
 Lesson learned, regarding changing instance. Always create and run a backup first
 
-
 ## Additional Information
 
-*Replacing the currently statically served front end with an angular project! New repsitory for the combined product!: https://github.com/AndoryuRenoa/MochiJumpWeb-SinglePackageDeployment
+*Replacing the currently statically served front end with an angular project! New repsitory for the combined product!: <https://github.com/AndoryuRenoa/MochiJumpWeb-SinglePackageDeployment>
 
 Current Status: MJLE-0.2.5
 
-multiple services, including google cloud & AWS entry point is: http://mochijump.com/
+multiple services, including google cloud & AWS entry point is: <http://mochijump.com/>
 
 ## Notes:
 
 Currently working on setting up http/2 reliably. Using Java 8 may need libtcnative directory
 
-
 ## Future Stuff:
-Worth looking into:
-https://stackoverflow.com/questions/38747525/spring-cloud-microservices-memory-usage
-
-
-Next up:
-
-Create user/password functionality [Done]
-
-create registration by email [Done]
 
 Should do:
 
