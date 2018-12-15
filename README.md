@@ -12,11 +12,11 @@ Current Status: MJLE-0.2.5
 
 multiple services, including google cloud & AWS entry point is: <http://mochijump.com/>
 
-## Notes:
+## Notes
 
 Currently working on setting up http/2 reliably. Using Java 8 may need libtcnative directory
 
-## Future Stuff:
+## Future Stuff
 
 Should do:
 
