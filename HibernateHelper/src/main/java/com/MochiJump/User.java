@@ -1,4 +1,4 @@
-package com.MochiJump;
+package com.mochijump;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

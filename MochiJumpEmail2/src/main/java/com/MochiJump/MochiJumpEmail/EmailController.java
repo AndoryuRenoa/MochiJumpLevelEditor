@@ -1,4 +1,4 @@
-package com.MochiJump.mochijumpemail;
+package com.mochijump.mochijumpemail;
 
 import java.io.IOException;
 
