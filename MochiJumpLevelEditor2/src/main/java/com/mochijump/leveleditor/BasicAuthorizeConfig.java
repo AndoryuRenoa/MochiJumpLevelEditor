@@ -39,7 +39,7 @@ import org.springframework.security.web.authentication.LoginUrlAuthenticationEnt
         .authorizeRequests().antMatchers("/", "/mainmenu", "/runtime**",
         		"/polyfills**", "/favicon.ico", "/vendor**", "/styles**", 
         		"/main**", "/login", "/loginProcessor", "/test/activate**",
-        		"/test/newUserCreation**", "/error", "/images/**", "/test/returnAll",
+        		"/test/newUserCreation**", "/error", "/assets/**", "/test/returnAll",
         		"/test/version", "/test/message**", "/loginFailure").permitAll()
         //okay so anything you want to have locked must be a level deeper "/" gives permission to everything
         //on the first level apparently

@@ -256,6 +256,11 @@ document.getElementById("paintBox").style.cursor = "crosshair";
 			xhttp.send();
 					
 	}
+	function mouseMoveDrawBox(){
+	     if (mouseDown === true){
+			makeNewBox();
+	      }
+	     }
 document.getElementById("paintBox").addEventListener("mousemove",function(event){
 		cordsFunction(event);
 	});
@@ -263,8 +268,3 @@ document.getElementById("paintBox").addEventListener("mouseleave", mouseReset);
 document.getElementById("paintBox").addEventListener("mousedown", mouseDn);
 document.getElementById("paintBox").addEventListener("mouseup", mouseUp);
 document.getElementById("paintBox").addEventListener("mousemove", mouseMoveDrawBox);
-	function mouseMoveDrawBox(){
-     if (mouseDown === true){
-		makeNewBox();
-      }
-     }

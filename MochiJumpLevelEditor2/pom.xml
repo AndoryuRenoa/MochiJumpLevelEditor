@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>MJLE</artifactId>
-    <version>0.2.4</version>
+    <artifactId>mochijumpweb</artifactId>
+    <version>0.2.5</version>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.2.RELEASE</version>
+        <groupId>com.MochiJump</groupId>
+		<artifactId>MJWeb</artifactId>
+		<version>0.2.5</version>
     </parent>
 
     <dependencies>
@@ -44,19 +44,21 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-        <dependency>
     		<groupId>javax.xml.bind</groupId>
     		<artifactId>jaxb-api</artifactId>
     		<version>2.3.0</version>
 		</dependency>
+		<dependency>
+            <groupId>com.MochiJump</groupId>
+            <artifactId>MochiJump-Front</artifactId>
+			<version>0.2.5</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
+        <docker.image.prefix>mochijump</docker.image.prefix>
     </properties>
 
     <build>
@@ -67,6 +69,57 @@
                 	<configuration>
                 	<mainClass>com.mochijump.leveleditor.Application</mainClass>
                 	</configuration>
+            </plugin>
+			<plugin>
+		    <artifactId>maven-resources-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <id>copy-resources</id>
+		            <phase>validate</phase>
+		            <goals>
+		                <goal>copy-resources</goal>
+		            </goals>
+		            <configuration>
+		                <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
+		                <resources>
+		                    <resource>
+		                        <directory>${project.parent.basedir}/MochiJumpFront/src/main/web/dist/mj-web-front-end/</directory>
+		                    </resource>
+		                </resources>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+		<!-- docker -->
+		<plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.9</version>
+                <configuration>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                </configuration>
+        </plugin>
+        <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
